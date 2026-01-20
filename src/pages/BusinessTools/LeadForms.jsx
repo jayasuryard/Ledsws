@@ -7,6 +7,12 @@ const LeadForms = () => {
   const { businessId } = useParams();
   const { theme, businesses, addLead } = useStore();
   const business = businesses.find(b => b.id === businessId);
+  
+  // Environment-aware base URL
+  const BASE_URL = import.meta.env.MODE === 'development' 
+    ? 'http://localhost:5173' 
+    : 'https://ledsws.vercel.app';
+  
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [showBuilderModal, setShowBuilderModal] = useState(false);
   const [showAnalyticsModal, setShowAnalyticsModal] = useState(false);
@@ -326,7 +332,7 @@ const LeadForms = () => {
 
   // Generate embed code with advanced options
   const generateEmbedCode = (form, type) => {
-    const baseUrl = `https://ledsws.vercel.app/forms/${form.id}`;
+    const baseUrl = `${BASE_URL}/forms/${form.id}`;
     
     if (type === 'iframe') {
       return `<!-- LedsWS Form Embed - Responsive -->
@@ -402,7 +408,7 @@ export default LedsWSForm;`;
 
   // Generate shareable URL with UTM params (supports both direct UTM and campaign tracking fields)
   const generateShareableUrl = (form, utmParams) => {
-    const baseUrl = `https://ledsws.vercel.app/forms/${form.id}`;
+    const baseUrl = `${BASE_URL}/forms/${form.id}`;
     const params = new URLSearchParams();
     
     // Map campaign tracking fields to UTM parameters if configured
@@ -924,7 +930,7 @@ export default LedsWSForm;`;
                     <span className="text-sm font-medium">Customize theme</span>
                   </button>
                   <button 
-                    onClick={() => window.open(`https://ledsws.vercel.app/forms/${forms.length + 1}`, '_blank')}
+                    onClick={() => window.open(`${BASE_URL}/forms/${forms.length + 1}`, '_blank')}
                     className="flex items-center space-x-2 px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg"
                   >
                     <Eye className="w-4 h-4" />
@@ -1675,30 +1681,44 @@ export default LedsWSForm;`;
 
       {/* Analytics Modal */}
       {showAnalyticsModal && selectedForm && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className={`w-full max-w-6xl max-h-[90vh] overflow-y-auto rounded-xl ${
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className={`w-full max-w-6xl max-h-[90vh] overflow-hidden rounded-2xl shadow-2xl ${
             theme === 'dark' ? 'bg-gray-900' : 'bg-white'
           }`}>
-            <div className="p-6 border-b border-gray-800 sticky top-0 bg-gray-900 z-10">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h2 className={`text-2xl font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                    {selectedForm.name} - Analytics
-                  </h2>
-                  <p className={`text-sm mt-1 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                    Comprehensive form performance and conversion insights
-                  </p>
+            {/* Modern Header with Gradient */}
+            <div className={`relative overflow-hidden ${
+              theme === 'dark' 
+                ? 'bg-gradient-to-br from-purple-900 via-pink-900 to-rose-900' 
+                : 'bg-gradient-to-br from-purple-600 via-pink-600 to-rose-600'
+            }`}>
+              <div className="absolute inset-0 bg-grid-white/10"></div>
+              <div className="relative p-8">
+                <div className="flex items-start justify-between">
+                  <div className="flex items-start space-x-4 flex-1">
+                    <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center border-2 border-white/30">
+                      <BarChart3 className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h2 className="text-3xl font-bold text-white mb-2">
+                        {selectedForm.name}
+                      </h2>
+                      <p className="text-sm text-white/90">
+                        Comprehensive form performance and conversion insights
+                      </p>
+                    </div>
+                  </div>
+                  <button 
+                    onClick={() => setShowAnalyticsModal(false)}
+                    className="p-2 rounded-lg hover:bg-white/20 transition-colors"
+                  >
+                    <X className="w-6 h-6 text-white" />
+                  </button>
                 </div>
-                <button 
-                  onClick={() => setShowAnalyticsModal(false)}
-                  className="p-2 rounded-lg hover:bg-gray-800"
-                >
-                  <X className="w-5 h-5 text-gray-400" />
-                </button>
               </div>
             </div>
 
-            <div className="p-6 space-y-6">
+            {/* Scrollable Content */}
+            <div className="max-h-[calc(90vh-140px)] overflow-y-auto p-6 space-y-6">
               {/* Key Metrics */}
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 {[
@@ -1893,33 +1913,44 @@ export default LedsWSForm;`;
 
       {/* Share Modal */}
       {showShareModal && selectedForm && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className={`w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-xl ${
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className={`w-full max-w-4xl max-h-[90vh] overflow-hidden rounded-2xl shadow-2xl ${
             theme === 'dark' ? 'bg-gray-900' : 'bg-white'
           }`}>
-            <div className="p-6 border-b border-gray-800 sticky top-0 bg-gray-900 z-10">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h2 className={`text-2xl font-bold flex items-center space-x-2 ${
-                    theme === 'dark' ? 'text-white' : 'text-gray-900'
-                  }`}>
-                    <Share2 className="w-6 h-6 text-cyan-500" />
-                    <span>Share Form</span>
-                  </h2>
-                  <p className={`text-sm mt-1 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                    {selectedForm.name} - Create trackable shareable links
-                  </p>
+            {/* Modern Header with Gradient */}
+            <div className={`relative overflow-hidden ${
+              theme === 'dark' 
+                ? 'bg-gradient-to-br from-cyan-900 via-blue-900 to-indigo-900' 
+                : 'bg-gradient-to-br from-cyan-600 via-blue-600 to-indigo-600'
+            }`}>
+              <div className="absolute inset-0 bg-grid-white/10"></div>
+              <div className="relative p-8">
+                <div className="flex items-start justify-between">
+                  <div className="flex items-start space-x-4 flex-1">
+                    <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center border-2 border-white/30">
+                      <Share2 className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h2 className="text-3xl font-bold text-white mb-2">
+                        Share Form
+                      </h2>
+                      <p className="text-sm text-white/90">
+                        {selectedForm.name} - Create trackable shareable links with campaign tracking
+                      </p>
+                    </div>
+                  </div>
+                  <button 
+                    onClick={() => setShowShareModal(false)}
+                    className="p-2 rounded-lg hover:bg-white/20 transition-colors"
+                  >
+                    <X className="w-6 h-6 text-white" />
+                  </button>
                 </div>
-                <button 
-                  onClick={() => setShowShareModal(false)}
-                  className="p-2 rounded-lg hover:bg-gray-800"
-                >
-                  <X className="w-5 h-5 text-gray-400" />
-                </button>
               </div>
             </div>
 
-            <div className="p-6 space-y-6">
+            {/* Scrollable Content */}
+            <div className="max-h-[calc(90vh-140px)] overflow-y-auto p-6 space-y-6">
               {/* UTM Parameters Builder */}
               <div className={`p-6 rounded-xl border ${
                 theme === 'dark' ? 'bg-gray-800 border-gray-700' : 'bg-gray-50 border-gray-200'
@@ -2195,7 +2226,7 @@ export default LedsWSForm;`;
                         This is how your form will appear when embedded:
                       </p>
                       <iframe
-                        src={`https://ledsws.vercel.app/form/${selectedForm.id}${generateShareableUrl(selectedForm, utmParams).split('?')[1] ? '?' + generateShareableUrl(selectedForm, utmParams).split('?')[1] : ''}`}
+                        src={`${BASE_URL}/forms/${selectedForm.id}${generateShareableUrl(selectedForm, utmParams).split('?')[1] ? '?' + generateShareableUrl(selectedForm, utmParams).split('?')[1] : ''}`}
                         className="w-full rounded border border-gray-700"
                         style={{ height: '600px' }}
                         title="Form Preview"
@@ -3071,30 +3102,44 @@ export default LedsWSForm;`;
 
       {/* Embed Code Modal */}
       {showEmbedModal && selectedForm && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className={`w-full max-w-3xl rounded-xl ${
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className={`w-full max-w-3xl max-h-[90vh] overflow-hidden rounded-2xl shadow-2xl ${
             theme === 'dark' ? 'bg-gray-900' : 'bg-white'
           }`}>
-            <div className="p-6 border-b border-gray-800">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h2 className={`text-2xl font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                    Publish & Embed Form
-                  </h2>
-                  <p className={`text-sm mt-1 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                    {selectedForm.name}
-                  </p>
+            {/* Modern Header with Gradient */}
+            <div className={`relative overflow-hidden ${
+              theme === 'dark' 
+                ? 'bg-gradient-to-br from-green-900 via-emerald-900 to-teal-900' 
+                : 'bg-gradient-to-br from-green-600 via-emerald-600 to-teal-600'
+            }`}>
+              <div className="absolute inset-0 bg-grid-white/10"></div>
+              <div className="relative p-8">
+                <div className="flex items-start justify-between">
+                  <div className="flex items-start space-x-4 flex-1">
+                    <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center border-2 border-white/30">
+                      <Code className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h2 className="text-3xl font-bold text-white mb-2">
+                        Publish & Embed Form
+                      </h2>
+                      <p className="text-sm text-white/90">
+                        {selectedForm.name}
+                      </p>
+                    </div>
+                  </div>
+                  <button 
+                    onClick={() => setShowEmbedModal(false)}
+                    className="p-2 rounded-lg hover:bg-white/20 transition-colors"
+                  >
+                    <X className="w-6 h-6 text-white" />
+                  </button>
                 </div>
-                <button 
-                  onClick={() => setShowEmbedModal(false)}
-                  className="p-2 rounded-lg hover:bg-gray-800"
-                >
-                  <X className="w-5 h-5 text-gray-400" />
-                </button>
               </div>
             </div>
 
-            <div className="p-6 space-y-6">
+            {/* Scrollable Content */}
+            <div className="max-h-[calc(90vh-140px)] overflow-y-auto p-6 space-y-6">
               {/* Hosted URL */}
               <div>
                 <div className="flex items-center justify-between mb-3">
