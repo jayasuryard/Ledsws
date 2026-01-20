@@ -5,7 +5,7 @@ import useStore from '../../store/useStore';
 
 const Login = () => {
   const navigate = useNavigate();
-  const { login, theme } = useStore();
+  const { login, completeOnboarding, theme } = useStore();
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
@@ -20,6 +20,7 @@ const Login = () => {
       email: formData.email,
       company: 'Demo Company'
     });
+    completeOnboarding(); // Mark onboarding as completed
     navigate('/dashboard');
   };
 
