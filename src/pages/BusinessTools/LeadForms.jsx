@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
-import { Plus, Eye, Copy, BarChart3, Edit, Trash2, Code, GripVertical, X, Settings, Link, Download, TrendingUp, Users, MousePointerClick, ChevronRight, ChevronDown, Sparkles, Save, ExternalLink, Zap, Share2, Facebook, Twitter, Linkedin, Mail, MessageCircle, Send, Upload, Tag } from 'lucide-react';
+import { Plus, Eye, Copy, BarChart3, Edit, Trash2, Code, X, Settings, Link, Download, TrendingUp, Users, MousePointerClick, ChevronRight, ChevronDown, Sparkles, Save, ExternalLink, Zap, Share2, Facebook, Twitter, Linkedin, Mail, MessageCircle, Send, Upload, Tag } from 'lucide-react';
 import { useParams } from 'react-router-dom';
 import useStore from '../../store/useStore';
+import FormCard from '../../components/LeadForms/FormCard';
+import EmbedModal from '../../components/LeadForms/EmbedModal';
+import ShareModal from '../../components/LeadForms/ShareModal';
+import FormStats from '../../components/LeadForms/FormStats';
+import FieldTypes from '../../components/LeadForms/FieldTypes';
+import FormFieldList from '../../components/LeadForms/FormFieldList';
+import ThemeCustomizer from '../../components/LeadForms/ThemeCustomizer';
+import CampaignTrackingConfig from '../../components/LeadForms/CampaignTrackingConfig';
 
 const LeadForms = () => {
   const { businessId } = useParams();
@@ -23,6 +31,8 @@ const LeadForms = () => {
   const [shareUrl, setShareUrl] = useState('');
   const [showEmbedPreview, setShowEmbedPreview] = useState(false);
   const [embedType, setEmbedType] = useState('iframe'); // 'iframe', 'javascript'
+  const [copiedEmbed, setCopiedEmbed] = useState(false);
+  const [copiedUrl, setCopiedUrl] = useState(false);
   const [utmParams, setUtmParams] = useState({
     source: '',
     medium: '',
@@ -401,8 +411,15 @@ export default LedsWSForm;`;
   };
 
   // Copy to clipboard
-  const copyToClipboard = (text) => {
+  const copyToClipboard = (text, type = 'general') => {
     navigator.clipboard.writeText(text);
+    if (type === 'embed') {
+      setCopiedEmbed(true);
+      setTimeout(() => setCopiedEmbed(false), 2000);
+    } else if (type === 'url') {
+      setCopiedUrl(true);
+      setTimeout(() => setCopiedUrl(false), 2000);
+    }
     // Show toast notification
   };
 
@@ -534,32 +551,7 @@ export default LedsWSForm;`;
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-        {[
-          { label: 'Total Forms', value: forms.length, icon: BarChart3, color: 'blue' },
-          { label: 'Total Views', value: '7,020', icon: Eye, color: 'purple' },
-          { label: 'Total Submissions', value: '1,268', icon: Users, color: 'green' },
-          { label: 'Avg Conversion', value: '15.9%', icon: TrendingUp, color: 'orange' },
-          { label: 'Active Forms', value: forms.filter(f => f.status === 'active').length, icon: Zap, color: 'cyan' }
-        ].map((stat, idx) => {
-          const Icon = stat.icon;
-          return (
-            <div key={idx} className={`p-6 rounded-xl border ${
-              theme === 'dark' ? 'bg-gray-900 border-gray-800' : 'bg-white border-gray-200'
-            }`}>
-              <div className="flex items-center justify-between mb-2">
-                <Icon className={`w-5 h-5 text-${stat.color}-500`} />
-              </div>
-              <div className={`text-3xl font-bold mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                {stat.value}
-              </div>
-              <div className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                {stat.label}
-              </div>
-            </div>
-          );
-        })}
-      </div>
+      <FormStats forms={forms} theme={theme} />
 
       {/* Forms List */}
       <div className={`rounded-xl border ${
@@ -572,7 +564,15 @@ export default LedsWSForm;`;
         </div>
         <div className="divide-y divide-gray-800">
           {forms.map((form) => (
-            <div key={form.id} className="p-6 hover:bg-gray-800/50 transition-colors">
+            <div 
+              key={form.id} 
+              className="p-6 hover:bg-gray-800/50 transition-colors cursor-pointer"
+              onClick={() => {
+                setSelectedForm(form);
+                setActiveTab('responses');
+                setShowBuilderModal(true);
+              }}
+            >
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <div className="flex items-center space-x-3 mb-3">
@@ -663,7 +663,8 @@ export default LedsWSForm;`;
 
                 <div className="flex items-center space-x-2 ml-4">
                   <button 
-                    onClick={() => {
+                    onClick={(e) => {
+                      e.stopPropagation();
                       setSelectedForm(form);
                       setUtmParams({
                         source: '',
@@ -680,7 +681,8 @@ export default LedsWSForm;`;
                     <Share2 className="w-5 h-5 text-cyan-500" />
                   </button>
                   <button 
-                    onClick={() => {
+                    onClick={(e) => {
+                      e.stopPropagation();
                       setSelectedForm(form);
                       setShowAnalyticsModal(true);
                     }}
@@ -690,7 +692,8 @@ export default LedsWSForm;`;
                     <BarChart3 className="w-5 h-5 text-purple-500" />
                   </button>
                   <button 
-                    onClick={() => {
+                    onClick={(e) => {
+                      e.stopPropagation();
                       setSelectedForm(form);
                       setShowEmbedModal(true);
                     }}
@@ -700,8 +703,10 @@ export default LedsWSForm;`;
                     <Code className="w-5 h-5 text-blue-500" />
                   </button>
                   <button 
-                    onClick={() => {
+                    onClick={(e) => {
+                      e.stopPropagation();
                       setSelectedForm(form);
+                      setActiveTab('questions');
                       setShowBuilderModal(true);
                     }}
                     className="p-2 rounded-lg hover:bg-gray-800" 
@@ -709,7 +714,13 @@ export default LedsWSForm;`;
                   >
                     <Edit className="w-5 h-5 text-orange-500" />
                   </button>
-                  <button className="p-2 rounded-lg hover:bg-gray-800" title="Delete">
+                  <button 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                    }}
+                    className="p-2 rounded-lg hover:bg-gray-800" 
+                    title="Delete"
+                  >
                     <Trash2 className="w-5 h-5 text-red-500" />
                   </button>
                 </div>
@@ -946,7 +957,7 @@ export default LedsWSForm;`;
           </div>
 
           {/* Main Content Area */}
-          <div className="max-w-4xl mx-auto py-8 px-4">
+          <div className="max-w-4xl mx-auto py-8 px-4 h-[calc(100vh-200px)] overflow-y-auto">
             {activeTab === 'questions' && (
               <div className="space-y-3">
                 {/* Form Header Card */}
