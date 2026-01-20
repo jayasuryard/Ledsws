@@ -22,7 +22,7 @@ import BusinessDashboard from './pages/Business/BusinessDashboard';
 import AIContentStudio from './pages/AIStudio/AIContentStudio';
 
 // CRM
-import CRMPipeline from './pages/CRM/CRMPipeline';
+import CRMPipelineEnhanced from './pages/CRM/CRMPipelineEnhanced';
 
 // Analytics
 import GlobalAnalytics from './pages/Analytics/GlobalAnalytics';
@@ -43,6 +43,7 @@ import EmailMarketing from './pages/BusinessTools/EmailMarketing';
 import BrandKit from './pages/BusinessTools/BrandKit';
 import SEOAudit from './pages/BusinessTools/SEOAudit';
 import LeadForms from './pages/BusinessTools/LeadForms';
+import FormViewer from './pages/BusinessTools/FormViewer';
 import BusinessSettings from './pages/BusinessTools/BusinessSettings';
 import DigitalCards from './pages/BusinessTools/DigitalCards';
 import BusinessAnalytics from './pages/BusinessTools/BusinessAnalytics';
@@ -71,6 +72,9 @@ function App() {
           {/* Public Routes */}
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Register />} />
+          
+          {/* Public Form Viewer Route */}
+          <Route path="/forms/:formId" element={<FormViewer />} />
 
           {/* Onboarding */}
           <Route
@@ -99,7 +103,7 @@ function App() {
             {/* Business Routes */}
             <Route path="businesses" element={<BusinessWorkspace />} />
             <Route path="business/:businessId" element={<BusinessDashboard />} />
-            <Route path="business/:businessId/crm" element={<CRMPipeline />} />
+            <Route path="business/:businessId/crm" element={<CRMPipelineEnhanced />} />
             
             {/* AI Studio */}
             <Route path="ai-studio" element={<AIContentStudio />} />
