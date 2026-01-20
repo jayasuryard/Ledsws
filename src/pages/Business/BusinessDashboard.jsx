@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { 
   ArrowLeft, MessageSquare, Mail, Share2, Palette, Search, 
   FileText, CreditCard, BarChart3, Plug, Settings, Inbox,
-  TrendingUp, Users, DollarSign, Activity, Zap
+  TrendingUp, Users, DollarSign, Activity, Zap, Info
 } from 'lucide-react';
 import useStore from '../../store/useStore';
 
@@ -11,6 +11,20 @@ const BusinessDashboard = () => {
   const { businessId } = useParams();
   const { theme, businesses } = useStore();
   const business = businesses.find(b => b.id === parseInt(businessId));
+
+  const Tooltip = ({ text }) => (
+    <div className="group relative inline-block">
+      <Info className={`w-4 h-4 cursor-help ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`} />
+      <div className={`absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 rounded-lg text-xs whitespace-nowrap opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 ${
+        theme === 'dark' ? 'bg-gray-700 text-white' : 'bg-gray-900 text-white'
+      }`}>
+        {text}
+        <div className={`absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent ${
+          theme === 'dark' ? 'border-t-gray-700' : 'border-t-gray-900'
+        }`}></div>
+      </div>
+    </div>
+  );
 
   if (!business) {
     return (
@@ -29,7 +43,8 @@ const BusinessDashboard = () => {
       icon: Inbox,
       color: 'blue',
       path: `/business/${businessId}/inbox`,
-      stats: '12 new'
+      stats: '12 new',
+      tooltip: 'Centralize all customer communications from email, social media, and messaging platforms in one unified inbox'
     },
     {
       title: 'Social Media Automation',
@@ -37,7 +52,8 @@ const BusinessDashboard = () => {
       icon: Share2,
       color: 'purple',
       path: `/business/${businessId}/social`,
-      stats: '5 scheduled'
+      stats: '5 scheduled',
+      tooltip: 'Schedule posts across multiple social platforms and automate your social media marketing campaigns'
     },
     {
       title: 'Email Marketing',
@@ -45,7 +61,8 @@ const BusinessDashboard = () => {
       icon: Mail,
       color: 'green',
       path: `/business/${businessId}/email`,
-      stats: '3 active'
+      stats: '3 active',
+      tooltip: 'Create email campaigns, automated drip sequences, and track engagement metrics'
     },
     {
       title: 'Lead CRM Pipeline',
@@ -53,7 +70,8 @@ const BusinessDashboard = () => {
       icon: Users,
       color: 'orange',
       path: `/business/${businessId}/crm`,
-      stats: '45 leads'
+      stats: '45 leads',
+      tooltip: 'Visualize your sales pipeline, track leads through stages, and manage customer relationships'
     },
     {
       title: 'Brand Kit & AI Persona',
@@ -61,7 +79,8 @@ const BusinessDashboard = () => {
       icon: Palette,
       color: 'pink',
       path: `/business/${businessId}/brand`,
-      stats: 'Setup'
+      stats: 'Setup',
+      tooltip: 'Define your brand identity with colors, logos, fonts, and AI-powered brand voice guidelines'
     },
     {
       title: 'Website SEO Audit',
@@ -69,7 +88,8 @@ const BusinessDashboard = () => {
       icon: Search,
       color: 'yellow',
       path: `/business/${businessId}/seo`,
-      stats: 'Run audit'
+      stats: 'Run audit',
+      tooltip: 'Analyze your website for SEO issues, get optimization recommendations, and improve search rankings'
     },
     {
       title: 'Lead Forms',
@@ -77,7 +97,8 @@ const BusinessDashboard = () => {
       icon: FileText,
       color: 'cyan',
       path: `/business/${businessId}/forms`,
-      stats: '2 forms'
+      stats: '2 forms',
+      tooltip: 'Build custom lead capture forms with conditional logic and embed them anywhere on your website'
     },
     {
       title: 'Digital Business Cards',
@@ -85,7 +106,8 @@ const BusinessDashboard = () => {
       icon: CreditCard,
       color: 'indigo',
       path: `/business/${businessId}/cards`,
-      stats: '1 card'
+      stats: '1 card',
+      tooltip: 'Create digital business cards with contact info, social links, and instant sharing via QR code or link'
     },
     {
       title: 'Business Analytics',
@@ -93,7 +115,8 @@ const BusinessDashboard = () => {
       icon: BarChart3,
       color: 'green',
       path: `/business/${businessId}/analytics`,
-      stats: 'View'
+      stats: 'View',
+      tooltip: 'Comprehensive analytics dashboard showing lead sources, conversion rates, revenue trends, and ROI'
     },
     {
       title: 'Integrations Hub',
@@ -101,7 +124,8 @@ const BusinessDashboard = () => {
       icon: Plug,
       color: 'blue',
       path: `/business/${businessId}/integrations`,
-      stats: '0 connected'
+      stats: '0 connected',
+      tooltip: 'Connect with popular platforms like Zapier, Slack, Google Analytics, and hundreds of other tools'
     },
     {
       title: 'Lead Scorer',
@@ -109,7 +133,8 @@ const BusinessDashboard = () => {
       icon: Zap,
       color: 'yellow',
       path: `/business/${businessId}/scorer`,
-      stats: 'Active'
+      stats: 'Active',
+      tooltip: 'Automatically score and prioritize leads based on behavior, demographics, and engagement patterns'
     },
     {
       title: 'Settings',
@@ -117,7 +142,8 @@ const BusinessDashboard = () => {
       icon: Settings,
       color: 'gray',
       path: `/business/${businessId}/settings`,
-      stats: 'Configure'
+      stats: 'Configure',
+      tooltip: 'Configure business settings, team members, permissions, billing, and notification preferences'
     }
   ];
 
@@ -218,8 +244,11 @@ const BusinessDashboard = () => {
                   : 'bg-white border-gray-200 hover:border-blue-500'
               }`}
             >
-              <div className={`p-3 rounded-lg mb-4 ${getColorClass(tool.color)} w-fit`}>
-                <tool.icon className="w-6 h-6" />
+              <div className="flex items-start justify-between mb-4">
+                <div className={`p-3 rounded-lg ${getColorClass(tool.color)} w-fit`}>
+                  <tool.icon className="w-6 h-6" />
+                </div>
+                <Tooltip text={tool.tooltip} />
               </div>
               <h3 className={`font-semibold mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                 {tool.title}
