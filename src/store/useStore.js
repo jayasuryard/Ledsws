@@ -275,6 +275,95 @@ const useStore = create(
       addActivity: (activity) => set((state) => ({
         activities: [{ ...activity, id: Date.now(), timestamp: new Date().toISOString() }, ...state.activities].slice(0, 50)
       })),
+
+      // Digital Business Cards
+      cards: [],
+      addCard: (card) => set((state) => ({
+        cards: [...state.cards, {
+          ...card,
+          id: Date.now().toString(),
+          createdAt: new Date().toISOString(),
+          views: 0,
+          shares: 0,
+          qrScans: 0,
+          ctaClicks: {},
+          disabled: false
+        }]
+      })),
+      updateCard: (cardId, updates) => set((state) => ({
+        cards: state.cards.map(c => c.id === cardId ? { ...c, ...updates } : c)
+      })),
+      deleteCard: (cardId) => set((state) => ({
+        cards: state.cards.filter(c => c.id !== cardId)
+      })),
+      trackCardInteraction: (cardId, interactionType) => {
+        const state = get();
+        const card = state.cards.find(c => c.id === cardId);
+        
+        if (!card) return;
+
+        // Update card analytics
+        const updates = {};
+        
+        switch (interactionType) {
+          case 'view':
+            updates.views = (card.views || 0) + 1;
+            // Create lead on first view
+            if (!card.leadCreated) {
+              const newLead = {
+                name: 'Anonymous Visitor',
+                source: 'Digital Business Card',
+                campaignId: cardId,
+                status: 'New',
+                leadScore: 5,
+                tags: ['digital-card', `card-${cardId}`, `card-owner-${card.name}`],
+                metadata: {
+                  formName: 'Digital Card View',
+                  cardTemplate: card.template || 'minimal'
+                }
+              };
+              state.addLead(newLead);
+              updates.leadCreated = true;
+            }
+            break;
+          
+          case 'share':
+            updates.shares = (card.shares || 0) + 1;
+            break;
+          
+          case 'qr_scan':
+            updates.qrScans = (card.qrScans || 0) + 1;
+            break;
+          
+          case 'call':
+          case 'email':
+          case 'website':
+          case 'vcard':
+          case 'whatsapp':
+          case 'meeting':
+            updates.ctaClicks = {
+              ...card.ctaClicks,
+              [interactionType]: (card.ctaClicks?.[interactionType] || 0) + 1
+            };
+            break;
+          
+          case 'form_submit':
+            // Lead score update happens in PublicCardView when form is submitted
+            break;
+        }
+
+        // Update card
+        state.updateCard(cardId, updates);
+
+        // Add activity
+        state.addActivity({
+          type: 'card_interaction',
+          cardId,
+          cardName: card.name,
+          interactionType,
+          description: `Digital card interaction: ${interactionType}`
+        });
+      },
     }),
     {
       name: 'leadflexup-storage',

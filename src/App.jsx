@@ -2,8 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import useStore from './store/useStore';
 
+// Platform Analytics
+import { Analytics } from "@vercel/analytics/react";
+
 // Layouts
 import MainLayout from './components/Layout/MainLayout';
+
+// Public Pages
+import PublicCardView from './components/DigitalCard/PublicCardView';
 
 // Auth Pages
 import Register from './pages/Auth/Register';
@@ -78,6 +84,9 @@ function App() {
           
           {/* Public Form Viewer Route */}
           <Route path="/forms/:formId" element={<FormViewer />} />
+          
+          {/* Public Digital Card Route */}
+          <Route path="/card/:cardId" element={<PublicCardView />} />
 
           {/* Onboarding */}
           <Route
