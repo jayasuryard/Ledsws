@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Plus, Eye, Copy, BarChart3, Edit, Trash2, Code, GripVertical, X, Settings, Link, Download, TrendingUp, Users, MousePointerClick, ChevronRight, ChevronDown, Sparkles, Save, ExternalLink, Zap, Share2, Facebook, Twitter, Linkedin, Mail, MessageCircle, Send, Upload } from 'lucide-react';
+import { Plus, Eye, Copy, BarChart3, Edit, Trash2, Code, GripVertical, X, Settings, Link, Download, TrendingUp, Users, MousePointerClick, ChevronRight, ChevronDown, Sparkles, Save, ExternalLink, Zap, Share2, Facebook, Twitter, Linkedin, Mail, MessageCircle, Send, Upload, Tag } from 'lucide-react';
 import { useParams } from 'react-router-dom';
 import useStore from '../../store/useStore';
 
