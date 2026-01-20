@@ -7,6 +7,8 @@ import MainLayout from './components/Layout/MainLayout';
 
 // Auth Pages
 import Register from './pages/Auth/Register';
+import Login from './pages/Auth/Login';
+import ForgotPassword from './pages/Auth/ForgotPassword';
 
 // Onboarding
 import Onboarding from './pages/Onboarding/Onboarding';
@@ -53,7 +55,7 @@ import LeadScorer from './pages/BusinessTools/LeadScorer';
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated } = useStore();
-  return isAuthenticated ? children : <Navigate to="/register" />;
+  return isAuthenticated ? children : <Navigate to="/login" />;
 };
 
 // Onboarding Check
@@ -71,7 +73,8 @@ function App() {
         <Routes>
           {/* Public Routes */}
           <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
           
           {/* Public Form Viewer Route */}
           <Route path="/forms/:formId" element={<FormViewer />} />

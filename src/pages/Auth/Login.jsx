@@ -1,27 +1,26 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { Mail, Lock, User, Zap, ArrowRight, Sparkles } from 'lucide-react';
+import { Mail, Lock, Zap, ArrowRight, Sparkles, Eye, EyeOff } from 'lucide-react';
 import useStore from '../../store/useStore';
 
-const Register = () => {
+const Login = () => {
   const navigate = useNavigate();
   const { login, theme } = useStore();
+  const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
     email: '',
-    password: '',
-    company: ''
+    password: ''
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate registration
+    // Simulate login - In production, validate credentials here
     login({
-      name: formData.name,
+      name: 'Demo User',
       email: formData.email,
-      company: formData.company
+      company: 'Demo Company'
     });
-    navigate('/onboarding');
+    navigate('/dashboard');
   };
 
   return (
@@ -40,10 +39,10 @@ const Register = () => {
 
         <div className="relative z-10 space-y-6">
           <h2 className="text-4xl font-bold text-white leading-tight">
-            Transform Your Lead Generation Game
+            Welcome Back to Your Growth Hub
           </h2>
           <p className="text-xl text-white/90">
-            Enterprise-grade tools built for SMEs. Scale your business with AI-powered automation.
+            Continue driving results with AI-powered lead generation and CRM automation.
           </p>
           
           <div className="grid grid-cols-2 gap-4 mt-8">
@@ -67,47 +66,21 @@ const Register = () => {
         </div>
       </div>
 
-      {/* Right Side - Registration Form */}
+      {/* Right Side - Login Form */}
       <div className="flex-1 flex items-center justify-center p-8">
         <div className="w-full max-w-md">
           <div className="text-center mb-8">
             <h2 className={`text-3xl font-bold mb-2 ${
               theme === 'dark' ? 'text-white' : 'text-gray-900'
             }`}>
-              Create Your Account
+              Welcome Back
             </h2>
             <p className={theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}>
-              Start growing your business in under 2 minutes
+              Sign in to continue to your dashboard
             </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
-            {/* Name */}
-            <div>
-              <label className={`block text-sm font-medium mb-2 ${
-                theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
-              }`}>
-                Full Name
-              </label>
-              <div className="relative">
-                <User className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 ${
-                  theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
-                }`} />
-                <input
-                  type="text"
-                  required
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className={`w-full pl-10 pr-4 py-3 rounded-lg border transition-colors ${
-                    theme === 'dark'
-                      ? 'bg-gray-800 border-gray-700 text-white focus:border-blue-500'
-                      : 'bg-white border-gray-300 text-gray-900 focus:border-blue-500'
-                  } focus:outline-none focus:ring-2 focus:ring-blue-500/20`}
-                  placeholder="John Doe"
-                />
-              </div>
-            </div>
-
             {/* Email */}
             <div>
               <label className={`block text-sm font-medium mb-2 ${
@@ -134,26 +107,6 @@ const Register = () => {
               </div>
             </div>
 
-            {/* Company */}
-            <div>
-              <label className={`block text-sm font-medium mb-2 ${
-                theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
-              }`}>
-                Company Name (Optional)
-              </label>
-              <input
-                type="text"
-                value={formData.company}
-                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                className={`w-full px-4 py-3 rounded-lg border transition-colors ${
-                  theme === 'dark'
-                    ? 'bg-gray-800 border-gray-700 text-white focus:border-blue-500'
-                    : 'bg-white border-gray-300 text-gray-900 focus:border-blue-500'
-                } focus:outline-none focus:ring-2 focus:ring-blue-500/20`}
-                placeholder="Your Company Inc."
-              />
-            </div>
-
             {/* Password */}
             <div>
               <label className={`block text-sm font-medium mb-2 ${
@@ -166,18 +119,46 @@ const Register = () => {
                   theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
                 }`} />
                 <input
-                  type="password"
+                  type={showPassword ? 'text' : 'password'}
                   required
                   value={formData.password}
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                  className={`w-full pl-10 pr-4 py-3 rounded-lg border transition-colors ${
+                  className={`w-full pl-10 pr-12 py-3 rounded-lg border transition-colors ${
                     theme === 'dark'
                       ? 'bg-gray-800 border-gray-700 text-white focus:border-blue-500'
                       : 'bg-white border-gray-300 text-gray-900 focus:border-blue-500'
                   } focus:outline-none focus:ring-2 focus:ring-blue-500/20`}
                   placeholder="••••••••"
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className={`absolute right-3 top-1/2 transform -translate-y-1/2 ${
+                    theme === 'dark' ? 'text-gray-400 hover:text-gray-300' : 'text-gray-500 hover:text-gray-700'
+                  }`}
+                >
+                  {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                </button>
               </div>
+            </div>
+
+            {/* Remember Me & Forgot Password */}
+            <div className="flex items-center justify-between">
+              <label className="flex items-center space-x-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                />
+                <span className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                  Remember me
+                </span>
+              </label>
+              <Link
+                to="/forgot-password"
+                className="text-sm text-blue-500 hover:text-blue-400 font-semibold"
+              >
+                Forgot password?
+              </Link>
             </div>
 
             {/* Submit */}
@@ -185,7 +166,7 @@ const Register = () => {
               type="submit"
               className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-[1.02] flex items-center justify-center space-x-2"
             >
-              <span>Create Account</span>
+              <span>Sign In</span>
               <ArrowRight className="w-5 h-5" />
             </button>
           </form>
@@ -206,7 +187,7 @@ const Register = () => {
             </div>
           </div>
 
-          {/* Google Login Button */}
+          {/* Social Login Button */}
           <button
             type="button"
             className={`w-full flex items-center justify-center space-x-2 py-3 px-4 rounded-lg border transition-colors ${
@@ -227,19 +208,19 @@ const Register = () => {
           <p className={`text-center mt-6 text-sm ${
             theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
           }`}>
-            Already have an account?{' '}
-            <Link to="/login" className="text-blue-500 hover:text-blue-400 font-semibold">
-              Sign in
+            Don't have an account?{' '}
+            <Link to="/register" className="text-blue-500 hover:text-blue-400 font-semibold">
+              Create account
             </Link>
           </p>
 
           <div className={`mt-6 p-4 rounded-lg border ${
             theme === 'dark' 
-              ? 'bg-blue-500/5 border-blue-500/20' 
-              : 'bg-blue-50 border-blue-200'
+              ? 'bg-green-500/5 border-green-500/20' 
+              : 'bg-green-50 border-green-200'
           }`}>
-            <p className="text-xs text-blue-500">
-              <strong>✨ What's next:</strong> After registration, you'll complete a quick 3-step onboarding to set up your first business and start generating leads immediately.
+            <p className="text-xs text-green-600 dark:text-green-400">
+              <strong>🎯 Quick Demo:</strong> Just enter any email and password to explore the full platform with sample data.
             </p>
           </div>
         </div>
@@ -248,4 +229,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
