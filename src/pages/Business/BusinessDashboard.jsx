@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { 
-  ArrowLeft, MessageSquare, Mail, Share2, Palette, Search, 
+  ArrowLeft, MessageSquare, Mail, Share2, Search, 
   FileText, CreditCard, BarChart3, Plug, Settings, Inbox,
-  TrendingUp, Users, DollarSign, Activity, Zap, Info
+  TrendingUp, Users, DollarSign, Activity, Zap, Info, Workflow
 } from 'lucide-react';
 import useStore from '../../store/useStore';
 
@@ -74,13 +74,13 @@ const BusinessDashboard = () => {
       tooltip: 'Visualize your sales pipeline, track leads through stages, and manage customer relationships'
     },
     {
-      title: 'Brand Kit & AI Persona',
-      description: 'Colors, logos, voice',
-      icon: Palette,
+      title: 'Ready Workflows',
+      description: 'Pre-built growth playbooks',
+      icon: Workflow,
       color: 'pink',
-      path: `/business/${businessId}/brand`,
-      stats: 'Setup',
-      tooltip: 'Define your brand identity with colors, logos, fonts, and AI-powered brand voice guidelines'
+      path: `/business/${businessId}/workflows`,
+      stats: '6 available',
+      tooltip: 'Choose a goal, we set up the system, you execute. Get leads, follow up, and see what works—fast.'
     },
     {
       title: 'Website SEO Audit',

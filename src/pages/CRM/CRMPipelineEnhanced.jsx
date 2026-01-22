@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Plus, ArrowLeft, User, Target } from 'lucide-react';
+import { Plus, ArrowLeft, User, Target, TrendingUp } from 'lucide-react';
 import useStore from '../../store/useStore';
 import CampaignCard from '../../components/CRM/CampaignCard';
 import AddCampaignModal from '../../components/CRM/AddCampaignModal';

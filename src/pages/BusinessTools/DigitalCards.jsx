@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, CreditCard, QrCode, Share2, Download, Edit, Trash2, Eye, Copy, ExternalLink, BarChart, Users } from 'lucide-react';
-import { useParams } from 'react-router-dom';
+import { Plus, CreditCard, QrCode, Share2, Download, Edit, Trash2, Eye, Copy, ExternalLink, BarChart, Users, ArrowLeft, ChevronRight } from 'lucide-react';
+import { useParams, Link } from 'react-router-dom';
 import useStore from '../../store/useStore';
 import CardTemplates, { templateNames } from '../../components/DigitalCard/CardTemplates';
 import { CreateEditCardModal, ShareModal, QRModal, AnalyticsModal } from '../../components/DigitalCard/CardModals';
@@ -175,6 +175,19 @@ const DigitalCards = () => {
 
   return (
     <div className="space-y-6">
+      {/* Breadcrumb */}
+      <div className="flex items-center space-x-2 text-sm">
+        <Link
+          to={`/business/${businessId}`}
+          className={`flex items-center space-x-1 ${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}
+        >
+          <ArrowLeft className="w-4 h-4" />
+          <span>Business Workspace</span>
+        </Link>
+        <ChevronRight className={`w-4 h-4 ${theme === 'dark' ? 'text-gray-600' : 'text-gray-400'}`} />
+        <span className={`${theme === 'dark' ? 'text-white' : 'text-gray-900'} font-medium`}>Digital Cards</span>
+      </div>
+
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>

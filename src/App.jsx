@@ -48,7 +48,7 @@ import Profile from './pages/Profile/Profile';
 import UnifiedInbox from './pages/BusinessTools/UnifiedInbox';
 import SocialMedia from './pages/BusinessTools/SocialMedia';
 import EmailMarketing from './pages/BusinessTools/EmailMarketing';
-import BrandKit from './pages/BusinessTools/BrandKit';
+import Workflows from './pages/BusinessTools/Workflows';
 import SEOAudit from './pages/BusinessTools/SEOAudit';
 import LeadForms from './pages/BusinessTools/LeadForms';
 import FormViewer from './pages/BusinessTools/FormViewer';
@@ -130,7 +130,7 @@ function App() {
             <Route path="business/:businessId/inbox" element={<UnifiedInbox />} />
             <Route path="business/:businessId/social" element={<SocialMedia />} />
             <Route path="business/:businessId/email" element={<EmailMarketing />} />
-            <Route path="business/:businessId/brand" element={<BrandKit />} />
+            <Route path="business/:businessId/workflows" element={<Workflows />} />
             <Route path="business/:businessId/seo" element={<SEOAudit />} />
             <Route path="business/:businessId/forms" element={<LeadForms />} />
             <Route path="business/:businessId/settings" element={<BusinessSettings />} />

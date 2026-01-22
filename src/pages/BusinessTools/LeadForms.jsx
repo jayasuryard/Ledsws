@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Plus, Eye, Copy, BarChart3, Edit, Trash2, Code, X, Settings, Link, Download, TrendingUp, Users, MousePointerClick, ChevronRight, ChevronDown, Sparkles, Save, ExternalLink, Zap, Share2, Facebook, Twitter, Linkedin, Mail, MessageCircle, Send, Upload, Tag } from 'lucide-react';
-import { useParams } from 'react-router-dom';
+import { Plus, Eye, Copy, BarChart3, Edit, Trash2, Code, X, Settings, Link as LinkIcon, Download, TrendingUp, Users, MousePointerClick, ChevronRight, ChevronDown, Sparkles, Save, ExternalLink, Zap, Share2, Facebook, Twitter, Linkedin, Mail, MessageCircle, Send, Upload, Tag, ArrowLeft } from 'lucide-react';
+import { useParams, Link } from 'react-router-dom';
 import useStore from '../../store/useStore';
 import FormCard from '../../components/LeadForms/FormCard';
 import EmbedModal from '../../components/LeadForms/EmbedModal';
@@ -531,6 +531,19 @@ export default LedsWSForm;`;
 
   return (
     <div className="space-y-6">
+      {/* Breadcrumb */}
+      <div className="flex items-center space-x-2 text-sm">
+        <Link
+          to={`/business/${businessId}`}
+          className={`flex items-center space-x-1 ${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}
+        >
+          <ArrowLeft className="w-4 h-4" />
+          <span>Business Workspace</span>
+        </Link>
+        <ChevronRight className={`w-4 h-4 ${theme === 'dark' ? 'text-gray-600' : 'text-gray-400'}`} />
+        <span className={`${theme === 'dark' ? 'text-white' : 'text-gray-900'} font-medium`}>Lead Forms</span>
+      </div>
+
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>

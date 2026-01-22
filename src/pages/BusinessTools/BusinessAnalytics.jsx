@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { TrendingUp, DollarSign, Users, Target, Calendar, Download, Filter, ArrowUp, ArrowDown, X, FileText, FileSpreadsheet } from 'lucide-react';
+import { TrendingUp, DollarSign, Users, Target, Calendar, Download, Filter, ArrowUp, ArrowDown, X, FileText, FileSpreadsheet, ArrowLeft, ChevronRight } from 'lucide-react';
 import { LineChart, Line, BarChart, Bar, AreaChart, Area, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import useStore from '../../store/useStore';
 
 const BusinessAnalytics = () => {
@@ -47,6 +47,19 @@ const BusinessAnalytics = () => {
 
   return (
     <div className="space-y-6">
+      {/* Breadcrumb */}
+      <div className="flex items-center space-x-2 text-sm">
+        <Link
+          to={`/business/${businessId}`}
+          className={`flex items-center space-x-1 ${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}
+        >
+          <ArrowLeft className="w-4 h-4" />
+          <span>Business Workspace</span>
+        </Link>
+        <ChevronRight className={`w-4 h-4 ${theme === 'dark' ? 'text-gray-600' : 'text-gray-400'}`} />
+        <span className={`${theme === 'dark' ? 'text-white' : 'text-gray-900'} font-medium`}>Analytics</span>
+      </div>
+
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
