@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowLeft, Zap, Clock, TrendingUp, Users, Target, MessageSquare, Search, BarChart3, Play, CheckCircle, Sparkles, ChevronRight } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 import useStore from '../../store/useStore';
+import LeadQualificationWorkflow from '../../components/Workflows/LeadQualificationWorkflow';
 import InboundLeadCaptureWorkflow from '../../components/Workflows/InboundLeadCaptureWorkflow';
 import SocialContentToLeadFormWorkflow from '../../components/Workflows/SocialContentToLeadFormWorkflow';
 import LocalBusinessLeadBoosterWorkflow from '../../components/Workflows/LocalBusinessLeadBoosterWorkflow';
@@ -31,6 +32,52 @@ const Workflows = () => {
 
   // Ready-to-use workflows
   const workflows = [
+    {
+      id: 0,
+      name: '🎯 Lead Qualification Campaign',
+      category: 'leads',
+      description: 'Complete automated system: Lead Form → Auto Emails → Scoring → Qualified Leads in CRM',
+      fullDescription: 'THE opinionated workflow for lead generation. Set it up once, get qualified leads automatically. This is what you came here for.',
+      timeToLaunch: '20-25 minutes',
+      tools: ['Lead Forms (2-Step)', 'Email Automation', 'Lead Scoring', 'CRM', 'Deal Pipeline'],
+      toolIcons: ['📋', '✉️', '⭐', '🎯', '💰'],
+      outcome: 'Qualified leads automatically delivered to your sales team',
+      isPremium: false,
+      badge: '🚀 RECOMMENDED',
+      features: [
+        'Step-1 Form: Capture name, email, company',
+        'Auto Email: Sent immediately with Step-2 form link',
+        'Step-2 Form: Budget, Timeline, Requirements (qualification)',
+        'Smart Follow-Ups: Automatic reminders if no response',
+        'Lead Scoring: Auto-track opens, clicks, submissions',
+        'Status Automation: New → Interested → Engaged → Qualified',
+        'Deal Creation: Auto-create deals when score ≥ 60',
+        'Sales Handoff: Qualified leads assigned to your team',
+        'Cold Lead Handling: Move unresponsive leads to nurture'
+      ],
+      steps: [
+        'Name your campaign & set company info',
+        'Configure Step-1 form fields (lead capture)',
+        'Configure Step-2 form fields (qualification)',
+        'Customize automated email sequence (3 emails)',
+        'Set lead scoring rules & qualification thresholds',
+        'Review automation flow & activate',
+        'Get your form link & start collecting leads!',
+        'Watch qualified leads appear in CRM automatically'
+      ],
+      howItWorks: [
+        '1. Lead fills Step-1 Form → Created with status "New", score 15',
+        '2. First email sent immediately → Tracked (opens +5, clicks +10)',
+        '3. If email clicked → Show Step-2 Qualification Form',
+        '4. Step-2 submitted → Score +20, status "Engaged"',
+        '5. Follow-up emails sent if no interaction (24h, 72h)',
+        '6. Score ≥ 30 → Status "Interested"',
+        '7. Score ≥ 60 → Status "Qualified" + Auto-create Deal',
+        '8. Deal assigned to sales team with all lead data',
+        '9. Sales team takes over: Call, Meeting, Proposal, Close',
+        '10. Won = Customer, Lost = Retarget Campaign'
+      ]
+    },
     {
       id: 1,
       name: 'Inbound Lead Capture & Follow-Up',
@@ -539,6 +586,15 @@ const Workflows = () => {
       )}
 
       {/* Workflow Wizards */}
+      {activeWorkflowId === 0 && (
+        <LeadQualificationWorkflow
+          isOpen={true}
+          onClose={() => setActiveWorkflowId(null)}
+          businessId={businessId}
+          theme={theme}
+        />
+      )}
+
       {activeWorkflowId === 1 && (
         <InboundLeadCaptureWorkflow
           isOpen={true}

@@ -47,7 +47,12 @@ import Profile from './pages/Profile/Profile';
 // Business Tools
 import UnifiedInbox from './pages/BusinessTools/UnifiedInbox';
 import SocialMedia from './pages/BusinessTools/SocialMedia';
-import EmailMarketing from './pages/BusinessTools/EmailMarketing';
+import EmailDashboard from './pages/BusinessTools/EmailDashboard';
+import LeadsCRM from './pages/BusinessTools/LeadsCRM';
+import LeadScoringSimulator from './pages/BusinessTools/LeadScoringSimulator';
+import NurtureFlowViewer from './pages/BusinessTools/NurtureFlowViewer';
+import EmailAnalytics from './pages/BusinessTools/EmailAnalytics';
+import TemplateLibrary from './pages/BusinessTools/TemplateLibrary';
 import Workflows from './pages/BusinessTools/Workflows';
 import SEOAudit from './pages/BusinessTools/SEOAudit';
 import LeadForms from './pages/BusinessTools/LeadForms';
@@ -56,7 +61,6 @@ import BusinessSettings from './pages/BusinessTools/BusinessSettings';
 import DigitalCards from './pages/BusinessTools/DigitalCards';
 import BusinessAnalytics from './pages/BusinessTools/BusinessAnalytics';
 import IntegrationHub from './pages/BusinessTools/IntegrationHub';
-import LeadScorer from './pages/BusinessTools/LeadScorer';
 import ImageDesigner from './pages/BusinessTools/ImageDesigner';
 import VideoEditor from './pages/BusinessTools/VideoEditor';
 import MediaLibrary from './pages/BusinessTools/MediaLibrary';
@@ -133,7 +137,12 @@ function App() {
             {/* Business Tools */}
             <Route path="business/:businessId/inbox" element={<UnifiedInbox />} />
             <Route path="business/:businessId/social" element={<SocialMedia />} />
-            <Route path="business/:businessId/email" element={<EmailMarketing />} />
+            <Route path="business/:businessId/email" element={<EmailDashboard />} />
+            <Route path="business/:businessId/email/leads" element={<LeadsCRM />} />
+            <Route path="business/:businessId/email/scoring" element={<LeadScoringSimulator />} />
+            <Route path="business/:businessId/email/nurture" element={<NurtureFlowViewer />} />
+            <Route path="business/:businessId/email/analytics" element={<EmailAnalytics />} />
+            <Route path="business/:businessId/email/templates" element={<TemplateLibrary />} />
             <Route path="business/:businessId/workflows" element={<Workflows />} />
             <Route path="business/:businessId/seo" element={<SEOAudit />} />
             <Route path="business/:businessId/forms" element={<LeadForms />} />
@@ -141,7 +150,6 @@ function App() {
             <Route path="business/:businessId/cards" element={<DigitalCards />} />
             <Route path="business/:businessId/analytics" element={<BusinessAnalytics />} />
             <Route path="business/:businessId/integrations" element={<IntegrationHub />} />
-            <Route path="business/:businessId/scorer" element={<LeadScorer />} />
             
             {/* Creator Tools */}
             <Route path="business/:businessId/design" element={<ImageDesigner />} />

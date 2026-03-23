@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Users, Filter, X, Plus } from 'lucide-react';
 
-const AudienceSelector = ({ theme, leads, selectedFilters, onFiltersChange }) => {
+const AudienceSelector = ({ theme, leads, selectedFilters = {}, onFiltersChange }) => {
   const [showAdvanced, setShowAdvanced] = useState(false);
 
   const leadStatuses = ['New', 'Contacted', 'Qualified', 'Converted', 'Inactive'];

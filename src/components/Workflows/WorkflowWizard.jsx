@@ -4,21 +4,39 @@ import { ArrowLeft, ArrowRight, Check, X } from 'lucide-react';
 const WorkflowWizard = ({ 
   isOpen, 
   onClose, 
-  workflowName, 
-  currentStep, 
-  totalSteps, 
-  onNext, 
-  onPrevious,
+  workflowName,
+  workflowDescription,
+  steps = [],
+  currentStep = 0,
+  setCurrentStep,
   onComplete,
   canProceed = true,
-  isLastStep = false,
   isProcessing = false,
   theme,
   children 
 }) => {
   if (!isOpen) return null;
 
+  // Calculate total steps and other derived values
+  const totalSteps = steps.length || 1;
+  const isLastStep = currentStep === totalSteps - 1;
   const progressPercentage = ((currentStep + 1) / totalSteps) * 100;
+
+  // Navigation handlers
+  const handleNext = () => {
+    if (currentStep < totalSteps - 1) {
+      setCurrentStep(currentStep + 1);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (currentStep > 0) {
+      setCurrentStep(currentStep - 1);
+    }
+  };
+
+  // Render current step content
+  const CurrentStepComponent = steps[currentStep]?.component;
 
   return (
     <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
@@ -35,7 +53,10 @@ const WorkflowWizard = ({
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h2 className="text-2xl font-bold text-white mb-1">{workflowName}</h2>
-                <p className="text-white/80 text-sm">
+                {workflowDescription && (
+                  <p className="text-white/80 text-sm">{workflowDescription}</p>
+                )}
+                <p className="text-white/60 text-sm mt-1">
                   Step {currentStep + 1} of {totalSteps}
                 </p>
               </div>
@@ -59,13 +80,13 @@ const WorkflowWizard = ({
 
         {/* Content */}
         <div className="max-h-[calc(90vh-240px)] overflow-y-auto p-6">
-          {children}
+          {CurrentStepComponent ? <CurrentStepComponent /> : children}
         </div>
 
         {/* Footer */}
         <div className={`p-6 border-t ${theme === 'dark' ? 'border-gray-800' : 'border-gray-200'} flex items-center justify-between`}>
           <button
-            onClick={onPrevious}
+            onClick={handlePrevious}
             disabled={currentStep === 0}
             className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
               currentStep === 0
@@ -124,7 +145,7 @@ const WorkflowWizard = ({
             </button>
           ) : (
             <button
-              onClick={onNext}
+              onClick={handleNext}
               disabled={!canProceed}
               className={`flex items-center gap-2 px-6 py-2 rounded-lg font-medium transition-colors ${
                 !canProceed
