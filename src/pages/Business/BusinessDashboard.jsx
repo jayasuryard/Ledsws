@@ -3,7 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import { 
   ArrowLeft, MessageSquare, Mail, Share2, Search, 
   FileText, CreditCard, BarChart3, Plug, Settings, Inbox,
-  TrendingUp, Users, DollarSign, Activity, Zap, Info, Workflow
+  TrendingUp, Users, DollarSign, Activity, Zap, Info, Workflow,
+  Image, Video, Sparkles, FolderOpen
 } from 'lucide-react';
 import useStore from '../../store/useStore';
 
@@ -81,6 +82,46 @@ const BusinessDashboard = () => {
       path: `/business/${businessId}/workflows`,
       stats: '6 available',
       tooltip: 'Choose a goal, we set up the system, you execute. Get leads, follow up, and see what works—fast.'
+    },
+    {
+      title: 'Creator Pipeline',
+      description: 'AI → Design → Publish',
+      icon: Sparkles,
+      color: 'purple',
+      path: `/business/${businessId}/creator`,
+      stats: 'New!',
+      tooltip: 'End-to-end creator workflow: Generate with AI, edit in designer, publish to social media',
+      badge: 'NEW'
+    },
+    {
+      title: 'Image Designer',
+      description: 'Canva-like design tool',
+      icon: Image,
+      color: 'blue',
+      path: `/business/${businessId}/design`,
+      stats: 'Create',
+      tooltip: 'Browser-based design editor with drag-and-drop, templates, and platform presets',
+      badge: 'NEW'
+    },
+    {
+      title: 'Video Editor',
+      description: 'Timeline-based editing',
+      icon: Video,
+      color: 'purple',
+      path: `/business/${businessId}/video`,
+      stats: 'Edit',
+      tooltip: 'Create videos with timeline editing, transitions, text overlays, and audio tracks',
+      badge: 'NEW'
+    },
+    {
+      title: 'Media Library',
+      description: 'All your creative assets',
+      icon: FolderOpen,
+      color: 'cyan',
+      path: `/business/${businessId}/media`,
+      stats: 'Browse',
+      tooltip: 'Centralized media library for images, videos, and AI-generated content',
+      badge: 'NEW'
     },
     {
       title: 'Website SEO Audit',
@@ -245,8 +286,15 @@ const BusinessDashboard = () => {
               }`}
             >
               <div className="flex items-start justify-between mb-4">
-                <div className={`p-3 rounded-lg ${getColorClass(tool.color)} w-fit`}>
-                  <tool.icon className="w-6 h-6" />
+                <div className="relative">
+                  <div className={`p-3 rounded-lg ${getColorClass(tool.color)} w-fit`}>
+                    <tool.icon className="w-6 h-6" />
+                  </div>
+                  {tool.badge && (
+                    <span className="absolute -top-1 -right-1 px-2 py-0.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-bold rounded-full">
+                      {tool.badge}
+                    </span>
+                  )}
                 </div>
                 <Tooltip text={tool.tooltip} />
               </div>

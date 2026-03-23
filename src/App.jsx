@@ -57,6 +57,10 @@ import DigitalCards from './pages/BusinessTools/DigitalCards';
 import BusinessAnalytics from './pages/BusinessTools/BusinessAnalytics';
 import IntegrationHub from './pages/BusinessTools/IntegrationHub';
 import LeadScorer from './pages/BusinessTools/LeadScorer';
+import ImageDesigner from './pages/BusinessTools/ImageDesigner';
+import VideoEditor from './pages/BusinessTools/VideoEditor';
+import MediaLibrary from './pages/BusinessTools/MediaLibrary';
+import CreatorPipeline from './pages/BusinessTools/CreatorPipeline';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -138,6 +142,12 @@ function App() {
             <Route path="business/:businessId/analytics" element={<BusinessAnalytics />} />
             <Route path="business/:businessId/integrations" element={<IntegrationHub />} />
             <Route path="business/:businessId/scorer" element={<LeadScorer />} />
+            
+            {/* Creator Tools */}
+            <Route path="business/:businessId/design" element={<ImageDesigner />} />
+            <Route path="business/:businessId/video" element={<VideoEditor />} />
+            <Route path="business/:businessId/media" element={<MediaLibrary />} />
+            <Route path="business/:businessId/creator" element={<CreatorPipeline />} />
           </Route>
 
           {/* Catch all */}

@@ -279,6 +279,226 @@ const useStore = create(
       // Digital Business Cards
       cards: [],
       addCard: (card) => set((state) => ({
+        cards: [...state.cards, { ...card, id: Date.now(), createdAt: new Date().toISOString() }]
+      })),
+      updateCard: (cardId, updates) => set((state) => ({
+        cards: state.cards.map(c => c.id === cardId ? { ...c, ...updates } : c)
+      })),
+      deleteCard: (cardId) => set((state) => ({
+        cards: state.cards.filter(c => c.id !== cardId)
+      })),
+
+      // Media Library (Creator Assets)
+      mediaAssets: [],
+      addMediaAsset: (asset) => set((state) => ({
+        mediaAssets: [...state.mediaAssets, { 
+          ...asset, 
+          id: Date.now(), 
+          createdAt: new Date().toISOString(),
+          businessId: state.activeBusiness?.id 
+        }]
+      })),
+      updateMediaAsset: (assetId, updates) => set((state) => ({
+        mediaAssets: state.mediaAssets.map(a => a.id === assetId ? { ...a, ...updates } : a)
+      })),
+      deleteMediaAsset: (assetId) => set((state) => ({
+        mediaAssets: state.mediaAssets.filter(a => a.id !== assetId)
+      })),
+
+      // Image Design Projects
+      designProjects: [],
+      createDesignProject: (project) => set((state) => ({
+        designProjects: [...state.designProjects, { 
+          ...project, 
+          id: Date.now(), 
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
+          businessId: state.activeBusiness?.id 
+        }]
+      })),
+      updateDesignProject: (projectId, updates) => set((state) => ({
+        designProjects: state.designProjects.map(p => 
+          p.id === projectId ? { ...p, ...updates, updatedAt: new Date().toISOString() } : p
+        )
+      })),
+      deleteDesignProject: (projectId) => set((state) => ({
+        designProjects: state.designProjects.filter(p => p.id !== projectId)
+      })),
+
+      // Video Edit Projects
+      videoProjects: [],
+      createVideoProject: (project) => set((state) => ({
+        videoProjects: [...state.videoProjects, { 
+          ...project, 
+          id: Date.now(), 
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
+          businessId: state.activeBusiness?.id,
+          status: 'draft'
+        }]
+      })),
+      updateVideoProject: (projectId, updates) => set((state) => ({
+        videoProjects: state.videoProjects.map(p => 
+          p.id === projectId ? { ...p, ...updates, updatedAt: new Date().toISOString() } : p
+        )
+      })),
+      deleteVideoProject: (projectId) => set((state) => ({
+        videoProjects: state.videoProjects.filter(p => p.id !== projectId)
+      })),
+
+      // Render Jobs Queue
+      renderJobs: [],
+      addRenderJob: (job) => set((state) => ({
+        renderJobs: [...state.renderJobs, { 
+          ...job, 
+          id: Date.now(), 
+          createdAt: new Date().toISOString(),
+          status: 'pending',
+          progress: 0
+        }]
+      })),
+      updateRenderJob: (jobId, updates) => set((state) => ({
+        renderJobs: state.renderJobs.map(j => j.id === jobId ? { ...j, ...updates } : j)
+      })),
+
+      // AI Generations
+      aiGenerations: [],
+      addAIGeneration: (generation) => set((state) => ({
+        aiGenerations: [...state.aiGenerations, { 
+          ...generation, 
+          id: Date.now(), 
+          createdAt: new Date().toISOString(),
+          businessId: state.activeBusiness?.id,
+          status: 'pending'
+        }]
+      })),
+      updateAIGeneration: (genId, updates) => set((state) => ({
+        aiGenerations: state.aiGenerations.map(g => g.id === genId ? { ...g, ...updates } : g)
+      })),
+
+      // Design Templates
+      designTemplates: [
+        {
+          id: 'ig-post',
+          name: 'Instagram Post',
+          category: 'social',
+          platform: 'instagram',
+          width: 1080,
+          height: 1080,
+          thumbnail: '📸'
+        },
+        {
+          id: 'ig-story',
+          name: 'Instagram Story',
+          category: 'social',
+          platform: 'instagram',
+          width: 1080,
+          height: 1920,
+          thumbnail: '📱'
+        },
+        {
+          id: 'linkedin-post',
+          name: 'LinkedIn Post',
+          category: 'social',
+          platform: 'linkedin',
+          width: 1200,
+          height: 627,
+          thumbnail: '💼'
+        },
+        {
+          id: 'fb-post',
+          name: 'Facebook Post',
+          category: 'social',
+          platform: 'facebook',
+          width: 1200,
+          height: 630,
+          thumbnail: '📘'
+        },
+        {
+          id: 'banner',
+          name: 'Web Banner',
+          category: 'web',
+          platform: 'web',
+          width: 1920,
+          height: 600,
+          thumbnail: '🖼️'
+        },
+        {
+          id: 'ad-square',
+          name: 'Square Ad',
+          category: 'ads',
+          platform: 'multi',
+          width: 1080,
+          height: 1080,
+          thumbnail: '🎯'
+        }
+      ],
+
+      // Video Templates
+      videoTemplates: [
+        {
+          id: 'reel',
+          name: 'Instagram Reel',
+          category: 'short',
+          platform: 'instagram',
+          duration: 30,
+          aspectRatio: '9:16',
+          thumbnail: '🎬'
+        },
+        {
+          id: 'short',
+          name: 'YouTube Short',
+          category: 'short',
+          platform: 'youtube',
+          duration: 60,
+          aspectRatio: '9:16',
+          thumbnail: '▶️'
+        },
+        {
+          id: 'tiktok',
+          name: 'TikTok Video',
+          category: 'short',
+          platform: 'tiktok',
+          duration: 60,
+          aspectRatio: '9:16',
+          thumbnail: '🎵'
+        },
+        {
+          id: 'promo',
+          name: 'Promo Video',
+          category: 'ad',
+          platform: 'multi',
+          duration: 15,
+          aspectRatio: '16:9',
+          thumbnail: '📺'
+        },
+        {
+          id: 'testimonial',
+          name: 'Testimonial',
+          category: 'content',
+          platform: 'multi',
+          duration: 30,
+          aspectRatio: '16:9',
+          thumbnail: '⭐'
+        }
+      ],
+
+      // Creator Workflows
+      creatorWorkflows: [],
+      addCreatorWorkflow: (workflow) => set((state) => ({
+        creatorWorkflows: [...state.creatorWorkflows, {
+          ...workflow,
+          id: Date.now(),
+          createdAt: new Date().toISOString(),
+          status: 'active'
+        }]
+      })),
+      updateCreatorWorkflow: (workflowId, updates) => set((state) => ({
+        creatorWorkflows: state.creatorWorkflows.map(w => 
+          w.id === workflowId ? { ...w, ...updates } : w
+        )
+      })),
+      addCard: (card) => set((state) => ({
         cards: [...state.cards, {
           ...card,
           id: Date.now().toString(),
