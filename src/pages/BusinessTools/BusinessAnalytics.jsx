@@ -224,7 +224,7 @@ const BusinessAnalytics = () => {
                 </div>
                 <div className={`w-full h-10 rounded-lg ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-200'}`}>
                   <div
-                    className="h-10 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white font-semibold"
+                    className="h-10 rounded-lg bg-navy-900 flex items-center justify-center text-white font-semibold"
                     style={{ width: `${stage.rate * 3}%` }}
                   >
                     {stage.rate}%
@@ -301,7 +301,7 @@ const BusinessAnalytics = () => {
                   theme === 'dark' ? 'bg-gray-800' : 'bg-gray-100'
                 }`}>
                   <div
-                    className="bg-gradient-to-t from-blue-500 to-purple-600 rounded-lg"
+                    className="bg-navy-900 rounded-lg"
                     style={{ height: `${value}%` }}
                   />
                 </div>

@@ -157,8 +157,8 @@ const SocialContentToLeadFormWorkflow = ({ isOpen, onClose, businessId, theme })
 
             <div className={`p-6 rounded-2xl border-2 ${
               theme === 'dark'
-                ? 'bg-gradient-to-br from-blue-900/20 to-purple-900/20 border-blue-800'
-                : 'bg-gradient-to-br from-blue-50 to-purple-50 border-blue-200'
+                ? 'bg-navy-900/20 border-navy-800'
+                : 'bg-navy-50 border-navy-200'
             }`}>
               <div className="grid grid-cols-2 gap-4">
                 <div>

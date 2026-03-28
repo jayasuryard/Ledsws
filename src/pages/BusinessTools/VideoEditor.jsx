@@ -206,7 +206,7 @@ const VideoEditor = () => {
               </button>
               <button
                 onClick={() => setShowRenderModal(true)}
-                className="px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 flex items-center space-x-2"
+                className="px-4 py-2 bg-navy-900 text-white rounded-lg hover:bg-navy-800 flex items-center space-x-2"
               >
                 <Zap className="w-4 h-4" />
                 <span>Render</span>
@@ -723,7 +723,7 @@ const VideoEditor = () => {
                 </button>
                 <button
                   onClick={handleRenderVideo}
-                  className="flex-1 px-4 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 font-semibold"
+                  className="flex-1 px-4 py-3 rounded-lg bg-navy-900 text-white hover:bg-navy-800 font-semibold"
                 >
                   Start Render
                 </button>

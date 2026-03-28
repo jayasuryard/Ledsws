@@ -46,8 +46,8 @@ const WorkflowWizard = ({
         {/* Header */}
         <div className={`relative overflow-hidden ${
           theme === 'dark' 
-            ? 'bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900' 
-            : 'bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600'
+            ? 'bg-navy-900' 
+            : 'bg-navy-900'
         }`}>
           <div className="relative p-6">
             <div className="flex items-center justify-between mb-4">
@@ -127,8 +127,8 @@ const WorkflowWizard = ({
                     ? 'bg-gray-800 text-gray-500 cursor-not-allowed'
                     : 'bg-gray-200 text-gray-400 cursor-not-allowed'
                   : theme === 'dark'
-                  ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:shadow-lg hover:shadow-green-500/50'
-                  : 'bg-gradient-to-r from-green-600 to-emerald-600 text-white hover:shadow-lg hover:shadow-green-500/50'
+                  ? 'bg-navy-900 text-white hover:bg-navy-800'
+                  : 'bg-navy-900 text-white hover:bg-navy-800'
               }`}
             >
               {isProcessing ? (

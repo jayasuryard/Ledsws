@@ -160,12 +160,12 @@ const EmailDashboard = () => {
         : value.toLocaleString();
 
     const colorClasses = {
-      blue: 'from-blue-500 to-cyan-500',
-      purple: 'from-purple-500 to-pink-500',
-      green: 'from-green-500 to-emerald-500',
-      orange: 'from-orange-500 to-red-500',
-      indigo: 'from-indigo-500 to-purple-500',
-      yellow: 'from-yellow-500 to-orange-500'
+      blue: 'from-navy-900 to-navy-800',
+      purple: 'from-navy-900 to-navy-800',
+      green: 'from-navy-900 to-navy-800',
+      orange: 'from-navy-900 to-navy-800',
+      indigo: 'from-navy-900 to-navy-800',
+      yellow: 'from-navy-900 to-navy-800'
     };
 
     return (
@@ -213,7 +213,7 @@ const EmailDashboard = () => {
         <div className="mb-8">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h1 className={`text-4xl font-bold mb-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent`}>
+              <h1 className={`text-4xl font-bold mb-2 text-navy-900`}>
                 Email Marketing
               </h1>
               <p className={`${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
@@ -310,12 +310,12 @@ const EmailDashboard = () => {
             onClick={() => isEmailConfigured ? setShowManualComposer(true) : setShowProviderSetup(true)}
             className={`p-6 rounded-2xl border-2 text-left group transition-all ${
               theme === 'dark'
-                ? 'bg-gradient-to-br from-blue-900/20 to-purple-900/20 border-blue-800/30 hover:border-blue-700/50'
-                : 'bg-gradient-to-br from-blue-50 to-purple-50 border-blue-200 hover:border-blue-300'
+                ? 'bg-navy-900/10 border-navy-800/30 hover:border-navy-700/50'
+                : 'bg-navy-50 border-navy-200 hover:border-navy-300'
             }`}
           >
             <div className="flex items-start justify-between mb-4">
-              <div className={`w-14 h-14 rounded-xl flex items-center justify-center bg-gradient-to-br from-blue-600 to-purple-600 group-hover:scale-110 transition-transform`}>
+              <div className={`w-14 h-14 rounded-xl flex items-center justify-center bg-navy-900 group-hover:scale-110 transition-transform`}>
                 <Send className="w-7 h-7 text-white" />
               </div>
               <ChevronRight className={`w-6 h-6 ${theme === 'dark' ? 'text-gray-600' : 'text-gray-400'}`} />
@@ -336,12 +336,12 @@ const EmailDashboard = () => {
             onClick={() => isEmailConfigured ? setShowCreateCampaign(true) : setShowProviderSetup(true)}
             className={`p-6 rounded-2xl border-2 text-left group transition-all ${
               theme === 'dark'
-                ? 'bg-gradient-to-br from-green-900/20 to-emerald-900/20 border-green-800/30 hover:border-green-700/50'
-                : 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-200 hover:border-green-300'
+                ? 'bg-navy-900/10 border-navy-800/30 hover:border-navy-700/50'
+                : 'bg-navy-50 border-navy-200 hover:border-navy-300'
             }`}
           >
             <div className="flex items-start justify-between mb-4">
-              <div className={`w-14 h-14 rounded-xl flex items-center justify-center bg-gradient-to-br from-green-600 to-emerald-600 group-hover:scale-110 transition-transform`}>
+              <div className={`w-14 h-14 rounded-xl flex items-center justify-center bg-navy-900 group-hover:scale-110 transition-transform`}>
                 <Mail className="w-7 h-7 text-white" />
               </div>
               <ChevronRight className={`w-6 h-6 ${theme === 'dark' ? 'text-gray-600' : 'text-gray-400'}`} />
@@ -362,12 +362,12 @@ const EmailDashboard = () => {
             onClick={() => isEmailConfigured ? setShowCreateSequence(true) : setShowProviderSetup(true)}
             className={`p-6 rounded-2xl border-2 text-left group transition-all ${
               theme === 'dark'
-                ? 'bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border-indigo-800/30 hover:border-indigo-700/50'
-                : 'bg-gradient-to-br from-indigo-50 to-purple-50 border-indigo-200 hover:border-indigo-300'
+                ? 'bg-navy-900/10 border-navy-800/30 hover:border-navy-700/50'
+                : 'bg-navy-50 border-navy-200 hover:border-navy-300'
             }`}
           >
             <div className="flex items-start justify-between mb-4">
-              <div className={`w-14 h-14 rounded-xl flex items-center justify-center bg-gradient-to-br from-indigo-600 to-purple-600 group-hover:scale-110 transition-transform`}>
+              <div className={`w-14 h-14 rounded-xl flex items-center justify-center bg-navy-900 group-hover:scale-110 transition-transform`}>
                 <Zap className="w-7 h-7 text-white" />
               </div>
               <ChevronRight className={`w-6 h-6 ${theme === 'dark' ? 'text-gray-600' : 'text-gray-400'}`} />
@@ -388,12 +388,12 @@ const EmailDashboard = () => {
             onClick={() => navigate(`/business/${businessId}/workflows`)}
             className={`p-6 rounded-2xl border-2 text-left group transition-all ${
               theme === 'dark'
-                ? 'bg-gradient-to-br from-orange-900/20 to-red-900/20 border-orange-800/30 hover:border-orange-700/50'
-                : 'bg-gradient-to-br from-orange-50 to-red-50 border-orange-200 hover:border-orange-300'
+                ? 'bg-navy-900/10 border-navy-800/30 hover:border-navy-700/50'
+                : 'bg-navy-50 border-navy-200 hover:border-navy-300'
             }`}
           >
             <div className="flex items-start justify-between mb-4">
-              <div className={`w-14 h-14 rounded-xl flex items-center justify-center bg-gradient-to-br from-orange-600 to-red-600 group-hover:scale-110 transition-transform`}>
+              <div className={`w-14 h-14 rounded-xl flex items-center justify-center bg-navy-900 group-hover:scale-110 transition-transform`}>
                 <Play className="w-7 h-7 text-white" />
               </div>
               <ChevronRight className={`w-6 h-6 ${theme === 'dark' ? 'text-gray-600' : 'text-gray-400'}`} />

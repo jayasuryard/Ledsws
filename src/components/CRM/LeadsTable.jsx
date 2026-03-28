@@ -62,7 +62,7 @@ const LeadsTable = ({ leads, theme, onViewDetails }) => {
                 {/* Lead Info */}
                 <td className="px-6 py-4">
                   <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-semibold">
+                    <div className="w-10 h-10 rounded-full bg-navy-900 flex items-center justify-center text-white font-semibold">
                       {lead.name?.charAt(0) || '?'}
                     </div>
                     <div className="flex-1">

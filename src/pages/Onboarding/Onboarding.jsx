@@ -59,7 +59,7 @@ const Onboarding = () => {
       createdAt: new Date().toISOString()
     });
     completeOnboarding();
-    navigate('/dashboard');
+    navigate('/app/dashboard');
   };
 
   const canProceed = () => {
@@ -82,9 +82,7 @@ const Onboarding = () => {
               <div key={s} className="flex items-center flex-1">
                 <div className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-all ${
                   s <= step
-                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
-                    : theme === 'dark'
-                    ? 'bg-gray-800 text-gray-400'
+                    ? 'bg-navy-900 text-white'
                     : 'bg-gray-200 text-gray-500'
                 }`}>
                   {s < step ? <Check className="w-5 h-5" /> : s}
@@ -92,9 +90,7 @@ const Onboarding = () => {
                 {s < totalSteps && (
                   <div className={`flex-1 h-1 mx-2 rounded-full transition-all ${
                     s < step
-                      ? 'bg-gradient-to-r from-blue-600 to-purple-600'
-                      : theme === 'dark'
-                      ? 'bg-gray-800'
+                      ? 'bg-navy-900'
                       : 'bg-gray-200'
                   }`} />
                 )}
@@ -391,8 +387,8 @@ const Onboarding = () => {
                 disabled={!canProceed()}
                 className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-semibold transition-all ${
                   canProceed()
-                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700'
-                    : 'bg-gray-700 text-gray-400 cursor-not-allowed'
+                    ? 'bg-navy-900 text-white hover:bg-navy-800'
+                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                 }`}
               >
                 <span>Continue</span>
@@ -401,7 +397,7 @@ const Onboarding = () => {
             ) : (
               <button
                 onClick={handleComplete}
-                className="flex items-center space-x-2 px-8 py-3 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-lg font-semibold hover:from-green-700 hover:to-blue-700 transition-all transform hover:scale-105"
+                className="flex items-center space-x-2 px-8 py-3 bg-navy-900 text-white rounded-lg font-semibold hover:bg-navy-800 transition-all transform hover:scale-105"
               >
                 <span>Launch Dashboard</span>
                 <Sparkles className="w-5 h-5" />

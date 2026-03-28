@@ -25,10 +25,10 @@ const Register = () => {
   };
 
   return (
-    <div className={`min-h-screen flex ${theme === 'dark' ? 'bg-gray-950' : 'bg-gray-50'}`}>
+    <div className="min-h-screen flex bg-gray-50">
       {/* Left Side - Branding */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500 p-12 flex-col justify-between relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <div className="hidden lg:flex lg:w-1/2 bg-navy-900 p-12 flex-col justify-between relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative z-10">
           <div className="flex items-center space-x-2 text-white">
             <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
@@ -183,7 +183,7 @@ const Register = () => {
             {/* Submit */}
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-[1.02] flex items-center justify-center space-x-2"
+              className="w-full bg-navy-900 text-white py-3 rounded-lg font-semibold hover:bg-navy-800 transition-all transform hover:scale-[1.02] flex items-center justify-center space-x-2"
             >
               <span>Create Account</span>
               <ArrowRight className="w-5 h-5" />

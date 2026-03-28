@@ -489,7 +489,7 @@ const ManualEmailComposer = ({ isOpen, onClose, theme, leads, onSend }) => {
                     ? theme === 'dark'
                       ? 'bg-gray-800 text-gray-500 cursor-not-allowed'
                       : 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                    : 'bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:shadow-lg hover:shadow-green-500/50'
+                    : 'bg-navy-900 text-white hover:bg-navy-800'
                 }`}
               >
                 <Send className="w-4 h-4" />

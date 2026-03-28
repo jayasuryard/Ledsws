@@ -47,8 +47,8 @@ export const CreateEditCardModal = ({
         {/* Header */}
         <div className={`px-6 py-4 flex items-center justify-between rounded-t-2xl ${
           theme === 'dark'
-            ? 'bg-gradient-to-r from-indigo-700 via-purple-700 to-fuchsia-700'
-            : 'bg-gradient-to-r from-indigo-500 via-purple-500 to-fuchsia-500 text-white'
+            ? 'bg-navy-900'
+            : 'bg-navy-900 text-white'
         }`}>
           <div>
             <p className="text-xs uppercase tracking-[0.2em] opacity-80">{isEdit ? 'Update card' : 'Create card'}</p>
@@ -271,7 +271,7 @@ export const CreateEditCardModal = ({
             <div className="flex items-center gap-3 pt-2">
               <button
                 type="submit"
-                className="flex-1 px-4 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-indigo-600 to-fuchsia-600 hover:opacity-90 transition"
+                className="flex-1 px-4 py-3 rounded-lg font-semibold text-white bg-navy-900 hover:bg-navy-800 transition"
               >
                 {isEdit ? 'Save Changes' : 'Create Card'}
               </button>

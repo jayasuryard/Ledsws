@@ -133,7 +133,7 @@ const Subscription = () => {
           >
             {plan.popular && (
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="px-4 py-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold rounded-full">
+                <span className="px-4 py-1 bg-navy-900 text-white text-sm font-semibold rounded-full">
                   Most Popular
                 </span>
               </div>
@@ -178,7 +178,7 @@ const Subscription = () => {
                     ? 'bg-gray-800 text-gray-400 cursor-not-allowed'
                     : 'bg-gray-200 text-gray-500 cursor-not-allowed'
                   : plan.popular
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700'
+                  ? 'bg-navy-900 text-white hover:bg-navy-800'
                   : 'bg-blue-600 text-white hover:bg-blue-700'
               }`}
               disabled={plan.id === subscription.plan}
@@ -233,7 +233,7 @@ const Subscription = () => {
               </div>
               <div className={`w-full h-2 rounded-full ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-200'}`}>
                 <div
-                  className="h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"
+                  className="h-2 rounded-full bg-navy-900"
                   style={{ width: `${(usage.used / usage.limit) * 100}%` }}
                 />
               </div>

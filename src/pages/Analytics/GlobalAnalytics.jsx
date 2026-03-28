@@ -310,7 +310,7 @@ const GlobalAnalytics = () => {
               </div>
               <div className={`w-full h-12 rounded-lg ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-200'}`}>
                 <div
-                  className="h-12 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white font-semibold transition-all duration-500"
+                  className="h-12 rounded-lg bg-navy-900 flex items-center justify-center text-white font-semibold transition-all duration-500"
                   style={{ width: `${stage.percentage * 10}%` }}
                 >
                   {stage.percentage}%

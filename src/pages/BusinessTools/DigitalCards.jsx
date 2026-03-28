@@ -200,7 +200,7 @@ const DigitalCards = () => {
         </div>
         <button
           onClick={() => setShowCreateModal(true)}
-          className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-semibold hover:from-indigo-700 hover:to-purple-700"
+          className="flex items-center space-x-2 px-6 py-3 bg-navy-900 text-white rounded-lg font-semibold hover:bg-navy-800"
         >
           <Plus className="w-5 h-5" />
           <span>Create Card</span>

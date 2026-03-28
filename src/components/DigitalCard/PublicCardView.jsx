@@ -158,7 +158,7 @@ END:VCARD`;
           </button>
           <button
             onClick={() => setShowContactForm(!showContactForm)}
-            className="px-7 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-cyan-400 via-emerald-300 to-blue-500 shadow-[0_14px_45px_rgba(14,165,233,0.35)] hover:shadow-[0_20px_55px_rgba(14,165,233,0.45)] hover:-translate-y-0.5 transition-all"
+            className="px-7 py-3 rounded-full font-semibold text-white bg-navy-900 shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
           >
             Get in Touch
           </button>
@@ -249,7 +249,7 @@ END:VCARD`;
                     <p className="text-xs text-slate-500">We respect your privacy. No spam, ever.</p>
                     <button
                       type="submit"
-                      className="px-6 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-600 shadow-[0_12px_35px_rgba(14,165,233,0.35)] hover:shadow-[0_16px_45px_rgba(14,165,233,0.45)] transition-all"
+                      className="px-6 py-3 rounded-lg font-semibold text-white bg-navy-900 shadow-lg hover:shadow-xl transition-all"
                     >
                       Send Message
                     </button>
@@ -267,7 +267,7 @@ END:VCARD`;
             {card.businessName && <span className="font-semibold text-white">{card.businessName}</span>}
             {!card.businessName && <span className="font-semibold text-white">Digital Business Cards</span>}
           </p>
-          <div className="text-4xl font-black tracking-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-emerald-200 to-blue-400 drop-shadow-[0_10px_25px_rgba(14,165,233,0.25)]">
+          <div className="text-4xl font-black tracking-[0.25em] text-navy-900">
             LEADFLEXUP
           </div>
         </div>

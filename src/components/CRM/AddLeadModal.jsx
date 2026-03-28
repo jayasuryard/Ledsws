@@ -18,7 +18,7 @@ const AddLeadModal = ({
         theme === 'dark' ? 'bg-gray-900' : 'bg-white'
       }`}>
         {/* Modal Header */}
-        <div className="relative h-32 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-t-2xl p-6">
+        <div className="relative h-32 bg-navy-900 rounded-t-2xl p-6">
           <div className="flex items-center space-x-4">
             <div className="w-16 h-16 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center">
               <User className="w-8 h-8 text-white" />
@@ -154,7 +154,7 @@ const AddLeadModal = ({
           <button
             onClick={handleAddLeadToCampaign}
             disabled={!leadFormData.name || !leadFormData.email}
-            className={`flex-1 px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed`}
+            className={`flex-1 px-4 py-3 bg-navy-900 text-white rounded-lg font-semibold hover:bg-navy-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed`}
           >
             Add Lead
           </button>

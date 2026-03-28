@@ -17,7 +17,48 @@ Navigate to: **http://localhost:5173**
 
 ---
 
-## 🎯 Your First Session
+## 🚀 NEW: AI-Powered Business Setup (60 Seconds!)
+
+**The fastest way to create your marketing system!** Skip manual setup and let AI do everything automatically.
+
+### What You Get Instantly:
+- ✅ Complete business profile analyzed from your website
+- ✅ Auto-detected brand colors and styling
+- ✅ Pre-built lead capture forms ready to embed
+- ✅ Automated email welcome & nurture sequences
+- ✅ Ready-to-use social media & ad content
+
+### How to Use AI Setup:
+1. Complete registration and onboarding (see below)
+2. On your dashboard, look for the **"🚀 NEW: AI-Powered Setup"** banner
+3. Click **"Start AI Setup Now"**
+4. Enter your website URL (e.g., `https://yourwebsite.com`)
+5. Click **"Analyze"**
+6. Watch as AI creates everything in ~60 seconds
+7. Your complete marketing system is ready! 🎉
+
+### What Happens:
+```
+Your Website URL
+    ↓
+🔍 Analyzing website (1.5s)
+    ↓
+🎨 Extracting branding (1.2s)
+    ↓
+📝 Creating lead forms (1.0s)
+    ↓
+📧 Setting up email workflows (1.2s)
+    ↓
+✨ Generating marketing content (1.0s)
+    ↓
+🎉 Complete! Redirecting to your dashboard
+```
+
+👉 **[Detailed AI Setup Guide](./QUICKSTART_AI_SETUP.md)**
+
+---
+
+## 🎯 Traditional Setup - Your First Session
 
 ### 1. Register (1 minute)
 - Enter your name, email, and password

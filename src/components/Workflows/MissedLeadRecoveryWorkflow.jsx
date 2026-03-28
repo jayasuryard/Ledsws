@@ -282,8 +282,8 @@ const MissedLeadRecoveryWorkflow = ({ isOpen, onClose, businessId, theme }) => {
 
           <div className={`p-6 rounded-2xl border-2 ${
             theme === 'dark'
-              ? 'bg-gradient-to-br from-orange-900/20 to-red-900/20 border-orange-800'
-              : 'bg-gradient-to-br from-orange-50 to-red-50 border-orange-200'
+              ? 'bg-navy-900/20 border-navy-800'
+              : 'bg-navy-50 border-navy-200'
           }`}>
             <AlertCircle className="w-8 h-8 text-orange-500 mb-3" />
             <h4 className={`font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>

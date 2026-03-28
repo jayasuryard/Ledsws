@@ -514,7 +514,7 @@ const CRMPipeline = () => {
               </h2>
               <button
                 onClick={() => setShowAddCampaignModal(true)}
-                className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-lg font-medium hover:from-cyan-700 hover:to-blue-700 transition-all"
+                className="flex items-center space-x-2 px-4 py-2 bg-navy-900 text-white rounded-lg font-medium hover:bg-navy-800 transition-all"
               >
                 <Plus className="w-4 h-4" />
                 <span>Add Campaign</span>
@@ -668,7 +668,7 @@ const CRMPipeline = () => {
                 setLeadFormData({});
                 setShowAddLeadToCampaignModal(true);
               }}
-              className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all"
+              className="flex items-center space-x-2 px-6 py-3 bg-navy-900 text-white rounded-lg font-semibold hover:bg-navy-800 transition-all"
             >
               <Plus className="w-5 h-5" />
               <span>Add Lead</span>
@@ -745,7 +745,7 @@ const CRMPipeline = () => {
           } shadow-2xl`}>
             <div className="p-6 border-b border-gray-800">
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-navy-900 flex items-center justify-center">
                   <TrendingUp className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -832,7 +832,7 @@ const CRMPipeline = () => {
               <button
                 onClick={confirmConversion}
                 disabled={!dealAmount || parseFloat(dealAmount) <= 0}
-                className={`flex-1 px-4 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg font-semibold hover:from-green-700 hover:to-emerald-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed`}
+                className={`flex-1 px-4 py-3 bg-navy-900 text-white rounded-lg font-semibold hover:bg-navy-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed`}
               >
                 Confirm & Close Deal
               </button>
@@ -850,7 +850,7 @@ const CRMPipeline = () => {
             theme === 'dark' ? 'bg-gray-900' : 'bg-white'
           }`}>
             {/* Modal Header */}
-            <div className="relative h-32 bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 rounded-t-2xl p-6">
+            <div className="relative h-32 bg-navy-900 rounded-t-2xl p-6">
               <div className="flex items-center space-x-4">
                 <div className="w-16 h-16 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center">
                   <Target className="w-8 h-8 text-white" />
@@ -1045,7 +1045,7 @@ const CRMPipeline = () => {
               <button
                 onClick={handleAddCampaign}
                 disabled={!campaignFormData.name.trim()}
-                className={`flex-1 px-4 py-3 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-700 hover:to-blue-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed`}
+                className={`flex-1 px-4 py-3 bg-navy-900 text-white rounded-lg font-semibold hover:bg-navy-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed`}
               >
                 Create Campaign
               </button>
@@ -1061,7 +1061,7 @@ const CRMPipeline = () => {
             theme === 'dark' ? 'bg-gray-900' : 'bg-white'
           }`}>
             {/* Modal Header */}
-            <div className="relative h-32 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-t-2xl p-6">
+            <div className="relative h-32 bg-navy-900 rounded-t-2xl p-6">
               <div className="flex items-center space-x-4">
                 <div className="w-16 h-16 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center">
                   <User className="w-8 h-8 text-white" />
@@ -1197,7 +1197,7 @@ const CRMPipeline = () => {
               <button
                 onClick={handleAddLeadToCampaign}
                 disabled={!leadFormData.name || !leadFormData.email}
-                className={`flex-1 px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed`}
+                className={`flex-1 px-4 py-3 bg-navy-900 text-white rounded-lg font-semibold hover:bg-navy-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed`}
               >
                 Add Lead
               </button>

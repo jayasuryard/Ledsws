@@ -122,7 +122,7 @@ const SocialMedia = () => {
           </button>
           <button
             onClick={() => setShowCreateModal(true)}
-            className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700"
+            className="flex items-center space-x-2 px-6 py-3 bg-navy-900 text-white rounded-lg font-semibold hover:bg-navy-800"
           >
             <Plus className="w-5 h-5" />
             <span>Create Post</span>
@@ -1029,7 +1029,7 @@ const SocialMedia = () => {
                     setCampaignForm({ name: '', duration: '7days', platforms: [], goal: 'engagement' });
                   }}
                   disabled={!campaignForm.name || campaignForm.platforms.length === 0}
-                  className="flex-1 px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 disabled:opacity-50"
+                  className="flex-1 px-4 py-3 bg-navy-900 text-white rounded-lg font-semibold hover:bg-navy-800 disabled:opacity-50"
                 >
                   Create Campaign
                 </button>
@@ -1192,10 +1192,10 @@ const SocialMedia = () => {
             </div>
 
             <div className={`p-6 rounded-lg mb-6 ${
-              theme === 'dark' ? 'bg-gradient-to-br from-pink-500/10 to-purple-500/10 border border-pink-500/20' : 'bg-gradient-to-br from-pink-50 to-purple-50 border border-pink-200'
+              theme === 'dark' ? 'bg-navy-900/10 border border-navy-500/20' : 'bg-navy-50 border border-navy-200'
             }`}>
               <div className="flex items-start space-x-4">
-                <div className="p-3 bg-gradient-to-r from-pink-500 to-purple-500 rounded-lg">
+                <div className="p-3 bg-navy-900 rounded-lg">
                   <Sparkles className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -1306,7 +1306,7 @@ const SocialMedia = () => {
                     setCalendarPosts([...calendarPosts, ...aiPosts]);
                     setShowAICalendar(false);
                   }}
-                  className="flex-1 px-4 py-3 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-lg font-semibold hover:from-pink-700 hover:to-purple-700 flex items-center justify-center space-x-2"
+                  className="flex-1 px-4 py-3 bg-navy-900 text-white rounded-lg font-semibold hover:bg-navy-800 flex items-center justify-center space-x-2"
                 >
                   <Sparkles className="w-5 h-5" />
                   <span>Generate Calendar</span>

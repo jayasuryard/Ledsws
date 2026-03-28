@@ -20,7 +20,7 @@ const DealAmountDialog = ({
       } shadow-2xl`}>
         <div className="p-6 border-b border-gray-800">
           <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
+            <div className="w-12 h-12 rounded-full bg-navy-900 flex items-center justify-center">
               <TrendingUp className="w-6 h-6 text-white" />
             </div>
             <div>
@@ -103,7 +103,7 @@ const DealAmountDialog = ({
           <button
             onClick={onConfirm}
             disabled={!dealAmount || parseFloat(dealAmount) <= 0}
-            className={`flex-1 px-4 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg font-semibold hover:from-green-700 hover:to-emerald-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed`}
+            className={`flex-1 px-4 py-3 bg-navy-900 text-white rounded-lg font-semibold hover:bg-navy-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed`}
           >
             Confirm & Close Deal
           </button>

@@ -243,7 +243,7 @@ const filteredLeads = leads.filter(lead => {
               <Filter className="w-4 h-4" />
               <span>Filters</span>
             </button>
-            <button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 flex items-center space-x-2">
+            <button className="px-6 py-2 bg-navy-900 text-white rounded-lg hover:bg-navy-800 flex items-center space-x-2">
               <Plus className="w-4 h-4" />
               <span>Add Lead</span>
             </button>
@@ -345,7 +345,7 @@ const filteredLeads = leads.filter(lead => {
                   >
                     <td className="py-4 px-6">
                       <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-semibold">
+                        <div className="w-10 h-10 rounded-full bg-navy-900 flex items-center justify-center text-white font-semibold">
                           {lead.name?.charAt(0)}
                         </div>
                         <div>

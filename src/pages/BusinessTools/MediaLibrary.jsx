@@ -110,7 +110,7 @@ const MediaLibrary = () => {
         </div>
         <button
           onClick={() => setShowUploadModal(true)}
-          className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700"
+          className="flex items-center space-x-2 px-6 py-3 bg-navy-900 text-white rounded-lg font-semibold hover:bg-navy-800"
         >
           <Upload className="w-5 h-5" />
           <span>Upload Asset</span>

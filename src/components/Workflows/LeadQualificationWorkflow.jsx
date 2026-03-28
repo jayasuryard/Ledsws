@@ -209,7 +209,7 @@ Thanks,
             </div>
           </div>
 
-          <div className={`p-5 rounded-xl border ${theme === 'dark' ? 'bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-blue-800/30' : 'bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200'}`}>
+          <div className={`p-5 rounded-xl border ${theme === 'dark' ? 'bg-navy-900/20 border-navy-800/30' : 'bg-navy-50 border-navy-200'}`}>
             <div className="flex items-start space-x-3">
               <Zap className={`w-5 h-5 mt-0.5 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`} />
               <div className="flex-1">
@@ -677,7 +677,7 @@ Thanks,
           </div>
 
           {/* Campaign Summary */}
-          <div className={`p-6 rounded-xl border ${theme === 'dark' ? 'bg-gradient-to-br from-blue-900/20 to-purple-900/20 border-blue-800/30' : 'bg-gradient-to-br from-blue-50 to-purple-50 border-blue-200'}`}>
+          <div className={`p-6 rounded-xl border ${theme === 'dark' ? 'bg-navy-900/20 border-navy-800/30' : 'bg-navy-50 border-navy-200'}`}>
             <h4 className={`font-bold text-lg mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
               {workflowData.campaignName || 'Untitled Campaign'}
             </h4>

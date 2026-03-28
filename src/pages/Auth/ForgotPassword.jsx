@@ -15,10 +15,10 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className={`min-h-screen flex ${theme === 'dark' ? 'bg-gray-950' : 'bg-gray-50'}`}>
+    <div className="min-h-screen flex bg-gray-50">
       {/* Left Side - Branding */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500 p-12 flex-col justify-between relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <div className="hidden lg:flex lg:w-1/2 bg-navy-900 p-12 flex-col justify-between relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative z-10">
           <div className="flex items-center space-x-2 text-white">
             <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
@@ -108,7 +108,7 @@ const ForgotPassword = () => {
                 {/* Submit */}
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-[1.02] flex items-center justify-center space-x-2"
+                  className="w-full bg-navy-900 text-white py-3 rounded-lg font-semibold hover:bg-navy-800 transition-all transform hover:scale-[1.02] flex items-center justify-center space-x-2"
                 >
                   <span>Send Reset Link</span>
                   <ArrowRight className="w-5 h-5" />
@@ -160,11 +160,7 @@ const ForgotPassword = () => {
                 </p>
               </div>
 
-              <div className={`p-6 rounded-xl border-2 space-y-4 ${
-                theme === 'dark' 
-                  ? 'bg-gradient-to-br from-blue-900/20 to-purple-900/20 border-blue-800' 
-                  : 'bg-gradient-to-br from-blue-50 to-purple-50 border-blue-200'
-              }`}>
+              <div className="p-6 rounded-xl border-2 space-y-4 bg-navy-50 border-navy-200">
                 <div className="space-y-3">
                   <div className="flex items-start space-x-3">
                     <div className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 ${

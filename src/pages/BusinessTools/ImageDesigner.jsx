@@ -266,7 +266,7 @@ const ImageDesigner = () => {
               </button>
               <button
                 onClick={() => setShowExportModal(true)}
-                className="px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 flex items-center space-x-2"
+                className="px-4 py-2 bg-navy-900 text-white rounded-lg hover:bg-navy-800 flex items-center space-x-2"
               >
                 <Download className="w-4 h-4" />
                 <span>Export</span>

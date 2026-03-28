@@ -111,8 +111,8 @@ const EmailProviderSetup = ({ isOpen, onClose, theme, onSave, currentConfig }) =
         {/* Header */}
         <div className={`relative overflow-hidden ${
           theme === 'dark' 
-            ? 'bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900' 
-            : 'bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600'
+            ? 'bg-navy-900' 
+            : 'bg-navy-900'
         }`}>
           <div className="relative p-6">
             <div className="flex items-center justify-between mb-4">
@@ -816,7 +816,7 @@ const EmailProviderSetup = ({ isOpen, onClose, theme, onSave, currentConfig }) =
           {step === 4 ? (
             <button
               onClick={handleSave}
-              className="px-6 py-2 rounded-lg font-medium bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:shadow-lg hover:shadow-green-500/50 transition-all"
+              className="px-6 py-2 rounded-lg font-medium bg-navy-900 text-white hover:bg-navy-800 transition-all"
             >
               Save Configuration
             </button>

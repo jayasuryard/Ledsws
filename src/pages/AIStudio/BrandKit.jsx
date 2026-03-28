@@ -35,7 +35,7 @@ const BrandKit = () => {
       {/* Breadcrumb */}
       <div className="flex items-center space-x-2 text-sm">
         <Link
-          to={`/business/${businessId}`}
+          to={`/app/business/${businessId}`}
           className={`flex items-center space-x-1 ${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}
         >
           <ArrowLeft className="w-4 h-4" />
@@ -55,7 +55,7 @@ const BrandKit = () => {
             {business?.name} - Define your brand identity
           </p>
         </div>
-        <button className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-lg font-semibold hover:from-pink-700 hover:to-purple-700">
+        <button className="flex items-center space-x-2 px-6 py-3 bg-navy-900 text-white rounded-lg font-semibold hover:bg-navy-800">
           <Download className="w-5 h-5" />
           <span>Export Brand Kit</span>
         </button>
@@ -275,7 +275,7 @@ const BrandKit = () => {
           theme === 'dark' ? 'bg-gray-800' : 'bg-gray-50'
         }`}>
           <div className="text-center">
-            <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center">
+            <div className="w-24 h-24 mx-auto mb-6 bg-navy-900 rounded-2xl flex items-center justify-center">
               <span className="text-white font-bold text-3xl">{business?.name?.charAt(0)}</span>
             </div>
             <h1 className={`text-4xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>

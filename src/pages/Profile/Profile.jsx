@@ -31,7 +31,7 @@ const Profile = () => {
       }`}>
         <div className="flex items-center space-x-6">
           <div className="relative">
-            <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+            <div className="w-24 h-24 bg-navy-900 rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-3xl">
                 {user?.name?.charAt(0).toUpperCase()}
               </span>

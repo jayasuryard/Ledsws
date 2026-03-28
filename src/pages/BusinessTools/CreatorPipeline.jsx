@@ -294,7 +294,7 @@ const CreatorPipeline = () => {
                   disabled={!workflow.aiPrompt}
                   className={`px-8 py-3 rounded-lg font-semibold flex items-center space-x-2 ${
                     workflow.aiPrompt
-                      ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700'
+                      ? 'bg-navy-900 text-white hover:bg-navy-800'
                       : 'bg-gray-700 text-gray-400 cursor-not-allowed'
                   }`}
                 >
@@ -510,7 +510,7 @@ const CreatorPipeline = () => {
 
       {/* Quick Actions */}
       <div className={`p-6 rounded-xl border ${
-        theme === 'dark' ? 'bg-gradient-to-br from-purple-900/20 to-pink-900/20 border-purple-800' : 'bg-gradient-to-br from-purple-50 to-pink-50 border-purple-200'
+        theme === 'dark' ? 'bg-navy-900/20 border-navy-800' : 'bg-navy-50 border-navy-200'
       }`}>
         <h3 className={`font-semibold mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
           Or jump directly to:

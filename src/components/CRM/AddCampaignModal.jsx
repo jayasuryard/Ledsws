@@ -20,7 +20,7 @@ const AddCampaignModal = ({
         theme === 'dark' ? 'bg-gray-900' : 'bg-white'
       }`}>
         {/* Modal Header */}
-        <div className="relative h-32 bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 rounded-t-2xl p-6">
+        <div className="relative h-32 bg-navy-900 rounded-t-2xl p-6">
           <div className="flex items-center space-x-4">
             <div className="w-16 h-16 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center">
               <Target className="w-8 h-8 text-white" />
@@ -215,7 +215,7 @@ const AddCampaignModal = ({
           <button
             onClick={handleAddCampaign}
             disabled={!campaignFormData.name.trim()}
-            className={`flex-1 px-4 py-3 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-700 hover:to-blue-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed`}
+            className={`flex-1 px-4 py-3 bg-navy-900 text-white rounded-lg font-semibold hover:bg-navy-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed`}
           >
             Create Campaign
           </button>

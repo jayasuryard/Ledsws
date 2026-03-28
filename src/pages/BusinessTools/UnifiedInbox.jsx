@@ -251,7 +251,7 @@ const UnifiedInbox = () => {
 
               <div className="mb-6">
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-navy-900 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold">
                       {selectedMessage.from.charAt(0).toUpperCase()}
                     </span>

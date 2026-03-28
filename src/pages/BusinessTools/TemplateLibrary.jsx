@@ -148,7 +148,7 @@ const TemplateLibrary = () => {
                   onUse(template);
                   onClose();
                 }}
-                className="flex-1 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 font-semibold"
+                className="flex-1 px-6 py-3 bg-navy-900 text-white rounded-lg hover:bg-navy-800 font-semibold"
               >
                 Use Template
               </button>
@@ -179,7 +179,7 @@ const TemplateLibrary = () => {
               {filteredTemplates.length} templates • {business?.name || 'Your Business'}
             </p>
           </div>
-          <button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 flex items-center space-x-2">
+          <button className="px-6 py-2 bg-navy-900 text-white rounded-lg hover:bg-navy-800 flex items-center space-x-2">
             <Plus className="w-4 h-4" />
             <span>Create Template</span>
           </button>
@@ -232,7 +232,7 @@ const TemplateLibrary = () => {
             onClick={() => setSelectedTemplate(template)}
           >
             {/* Template Icon/Emoji */}
-            <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center text-3xl mb-4">
+            <div className="w-16 h-16 rounded-xl bg-navy-900 flex items-center justify-center text-3xl mb-4">
               {template.thumbnail}
             </div>
 

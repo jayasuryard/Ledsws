@@ -165,7 +165,7 @@ const LeadScoringSimulator = () => {
 
           <button
             onClick={runFullSimulation}
-            className="w-full mt-4 px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 flex items-center justify-center space-x-2 font-semibold"
+            className="w-full mt-4 px-4 py-3 bg-navy-900 text-white rounded-lg hover:bg-navy-800 flex items-center justify-center space-x-2 font-semibold"
           >
             <Play className="w-5 h-5" />
             <span>Run Full Simulation</span>
@@ -214,7 +214,7 @@ const LeadScoringSimulator = () => {
             }`}>
               <div className="text-center">
                 <div className="flex items-center justify-center mb-4">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white text-2xl font-bold">
+                  <div className="w-20 h-20 rounded-full bg-navy-900 flex items-center justify-center text-white text-2xl font-bold">
                     {selectedLead.name?.charAt(0)}
                   </div>
                 </div>

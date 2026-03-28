@@ -210,8 +210,8 @@ const CampaignLaunchWorkflow = ({ isOpen, onClose, businessId, theme }) => {
 
             <div className={`p-6 rounded-2xl border-2 ${
               theme === 'dark'
-                ? 'bg-gradient-to-br from-purple-900/20 to-pink-900/20 border-purple-800'
-                : 'bg-gradient-to-br from-purple-50 to-pink-50 border-purple-200'
+                ? 'bg-navy-900/20 border-navy-800'
+                : 'bg-navy-50 border-navy-200'
             }`}>
               <div className="text-center mb-6">
                 <div className={`text-6xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>

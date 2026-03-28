@@ -361,8 +361,8 @@ const ContentThatConvertsWorkflow = ({ isOpen, onClose, businessId, theme }) => 
 
             <div className={`p-6 rounded-2xl border-2 ${
               theme === 'dark'
-                ? 'bg-gradient-to-br from-purple-900/20 to-pink-900/20 border-purple-800'
-                : 'bg-gradient-to-br from-purple-50 to-pink-50 border-purple-200'
+                ? 'bg-navy-900/20 border-navy-800'
+                : 'bg-navy-50 border-navy-200'
             }`}>
               <Sparkles className="w-8 h-8 text-purple-500 mb-3" />
               <h4 className={`font-semibold mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>

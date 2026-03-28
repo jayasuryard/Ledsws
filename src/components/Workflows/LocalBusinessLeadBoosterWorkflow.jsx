@@ -214,8 +214,8 @@ const LocalBusinessLeadBoosterWorkflow = ({ isOpen, onClose, businessId, theme }
 
           <div className={`p-6 rounded-2xl border-2 ${
             theme === 'dark'
-              ? 'bg-gradient-to-br from-green-900/20 to-emerald-900/20 border-green-800'
-              : 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-200'
+              ? 'bg-navy-900/20 border-navy-800'
+              : 'bg-navy-50 border-navy-200'
           }`}>
             <h4 className={`font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
               What You'll Get:

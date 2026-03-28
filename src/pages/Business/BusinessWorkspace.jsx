@@ -164,7 +164,7 @@ const BusinessWorkspace = () => {
         </div>
         <button
           onClick={() => setShowAddModal(true)}
-          className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105"
+          className="flex items-center space-x-2 px-6 py-3 bg-navy-900 text-white rounded-lg font-semibold hover:bg-navy-800 transition-all transform hover:scale-105"
         >
           <Plus className="w-5 h-5" />
           <span>New Business</span>
@@ -304,7 +304,7 @@ const BusinessWorkspace = () => {
           {!searchTerm && (
             <button
               onClick={() => setShowAddModal(true)}
-              className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all"
+              className="inline-flex items-center space-x-2 px-6 py-3 bg-navy-900 text-white rounded-lg font-semibold hover:bg-navy-800 transition-all"
             >
               <Plus className="w-5 h-5" />
               <span>Create Business</span>
@@ -326,7 +326,7 @@ const BusinessWorkspace = () => {
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-navy-900 rounded-lg flex items-center justify-center">
                       <Briefcase className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -434,7 +434,7 @@ const BusinessWorkspace = () => {
                 } transition-all`}
               >
                 <div className="flex items-center space-x-4 flex-1">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-navy-900 rounded-lg flex items-center justify-center">
                     <Briefcase className="w-6 h-6 text-white" />
                   </div>
                   <div>

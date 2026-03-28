@@ -9,6 +9,7 @@ import { Analytics } from "@vercel/analytics/react";
 import MainLayout from './components/Layout/MainLayout';
 
 // Public Pages
+import LandingPage from './pages/LandingPage';
 import PublicCardView from './components/DigitalCard/PublicCardView';
 
 // Auth Pages
@@ -20,20 +21,23 @@ import ForgotPassword from './pages/Auth/ForgotPassword';
 import Onboarding from './pages/Onboarding/Onboarding';
 
 // Dashboard Pages
-import GlobalDashboard from './pages/Dashboard/GlobalDashboard';
+import ModernDashboard from './pages/Dashboard/ModernDashboard';
+import AIBusinessSetup from './pages/Dashboard/AIBusinessSetup';
 
 // Business Pages
-import BusinessWorkspace from './pages/Business/BusinessWorkspace';
+import ModernBusinessWorkspace from './pages/Business/ModernBusinessWorkspace';
 import BusinessDashboard from './pages/Business/BusinessDashboard';
 
 // AI Studio
+import ModernAIStudio from './pages/AIStudio/ModernAIStudio';
 import AIContentStudio from './pages/AIStudio/AIContentStudio';
+import BrandKit from './pages/AIStudio/BrandKit';
 
 // CRM
 import CRMPipelineEnhanced from './pages/CRM/CRMPipelineEnhanced';
 
 // Analytics
-import GlobalAnalytics from './pages/Analytics/GlobalAnalytics';
+import ModernAnalytics from './pages/Analytics/ModernAnalytics';
 
 // Team
 import TeamManagement from './pages/Team/TeamManagement';
@@ -79,12 +83,15 @@ const OnboardingCheck = ({ children }) => {
 };
 
 function App() {
-  const { isAuthenticated, theme } = useStore();
+  const { isAuthenticated } = useStore();
 
   return (
-    <div className={theme === 'dark' ? 'dark' : ''}>
+    <div>
       <Router>
         <Routes>
+          {/* Public Landing Page */}
+          <Route path="/" element={<LandingPage />} />
+          
           {/* Public Routes */}
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
@@ -108,7 +115,7 @@ function App() {
 
           {/* Protected Routes with Layout */}
           <Route
-            path="/"
+            path="/app"
             element={
               <ProtectedRoute>
                 <OnboardingCheck>
@@ -117,19 +124,22 @@ function App() {
               </ProtectedRoute>
             }
           >
-            <Route index element={<Navigate to="/dashboard" />} />
-            <Route path="dashboard" element={<GlobalDashboard />} />
+            <Route index element={<Navigate to="/app/dashboard" />} />
+            <Route path="dashboard" element={<ModernDashboard />} />
+            <Route path="ai-setup" element={<AIBusinessSetup />} />
             
             {/* Business Routes */}
-            <Route path="businesses" element={<BusinessWorkspace />} />
+            <Route path="businesses" element={<ModernBusinessWorkspace />} />
             <Route path="business/:businessId" element={<BusinessDashboard />} />
             <Route path="business/:businessId/crm" element={<CRMPipelineEnhanced />} />
             
             {/* AI Studio */}
-            <Route path="ai-studio" element={<AIContentStudio />} />
+            <Route path="ai-studio" element={<ModernAIStudio />} />
+            <Route path="ai-studio/text" element={<AIContentStudio />} />
+            <Route path="ai-studio/brand-kit" element={<BrandKit />} />
             
             {/* Main Features */}
-            <Route path="analytics" element={<GlobalAnalytics />} />
+            <Route path="analytics" element={<ModernAnalytics />} />
             <Route path="team" element={<TeamManagement />} />
             <Route path="subscription" element={<Subscription />} />
             <Route path="profile" element={<Profile />} />

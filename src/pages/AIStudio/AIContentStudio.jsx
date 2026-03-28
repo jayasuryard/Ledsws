@@ -234,7 +234,7 @@ const AIContentStudio = () => {
               </div>
 
               <div className={`mt-4 p-4 rounded-lg border ${
-                theme === 'dark' ? 'bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-blue-800' : 'bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200'
+                theme === 'dark' ? 'bg-navy-900/20 border-navy-800' : 'bg-navy-50 border-navy-200'
               }`}>
                 <div className="flex items-center justify-between">
                   <div>
@@ -247,7 +247,7 @@ const AIContentStudio = () => {
                   </div>
                   <button
                     onClick={() => navigate(`/business/${selectedBusiness}/creator`)}
-                    className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 flex items-center space-x-2"
+                    className="px-4 py-2 bg-navy-900 text-white rounded-lg hover:bg-navy-800 flex items-center space-x-2"
                   >
                     <Zap className="w-4 h-4" />
                     <span>Creator Pipeline</span>
@@ -295,7 +295,7 @@ const AIContentStudio = () => {
             className={`w-full flex items-center justify-center space-x-2 px-6 py-3 rounded-lg font-semibold transition-all ${
               !selectedBusiness || !contentType || !prompt || isGenerating
                 ? 'bg-gray-700 text-gray-400 cursor-not-allowed'
-                : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700'
+                : 'bg-navy-900 text-white hover:bg-navy-800'
             }`}
           >
             {isGenerating ? (

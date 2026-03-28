@@ -556,7 +556,7 @@ export default LedsWSForm;`;
         </div>
         <button
           onClick={() => setShowCreateModal(true)}
-          className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-700 hover:to-blue-700"
+          className="flex items-center space-x-2 px-6 py-3 bg-navy-900 text-white rounded-lg font-semibold hover:bg-navy-800"
         >
           <Plus className="w-5 h-5" />
           <span>Create Form</span>
@@ -660,7 +660,7 @@ export default LedsWSForm;`;
                           <div key={idx} className="flex-1">
                             <div className={`h-2 rounded-full ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-200'}`}>
                               <div 
-                                className="h-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500"
+                                className="h-2 rounded-full bg-navy-900"
                                 style={{ width: `${rate}%` }}
                               />
                             </div>
@@ -1288,7 +1288,7 @@ export default LedsWSForm;`;
 
                 <button
                   onClick={() => setShowCampaignTracking(true)}
-                  className="w-full bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg border-2 border-purple-200 shadow-sm p-4 text-left hover:border-purple-300 transition-all"
+                  className="w-full bg-navy-50 rounded-lg border-2 border-navy-200 shadow-sm p-4 text-left hover:border-navy-300 transition-all"
                 >
                   <div className="flex items-center justify-between">
                     <div>
@@ -1712,8 +1712,8 @@ export default LedsWSForm;`;
             {/* Modern Header with Gradient */}
             <div className={`relative overflow-hidden ${
               theme === 'dark' 
-                ? 'bg-gradient-to-br from-purple-900 via-pink-900 to-rose-900' 
-                : 'bg-gradient-to-br from-purple-600 via-pink-600 to-rose-600'
+                ? 'bg-navy-900' 
+                : 'bg-navy-900'
             }`}>
               <div className="absolute inset-0 bg-grid-white/10"></div>
               <div className="relative p-8">
@@ -1781,7 +1781,7 @@ export default LedsWSForm;`;
                   {selectedForm.analytics?.daily.map((count, idx) => (
                     <div key={idx} className="flex-1 flex flex-col items-center">
                       <div 
-                        className="w-full bg-gradient-to-t from-cyan-600 to-blue-500 rounded-t"
+                        className="w-full bg-navy-900 rounded-t"
                         style={{ height: `${(count / Math.max(...selectedForm.analytics.daily)) * 100}%` }}
                       />
                       <span className={`text-xs mt-2 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
@@ -1879,7 +1879,7 @@ export default LedsWSForm;`;
                         </div>
                         <div className={`h-2 rounded-full ${theme === 'dark' ? 'bg-gray-700' : 'bg-gray-200'}`}>
                           <div 
-                            className="h-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500"
+                            className="h-2 rounded-full bg-navy-900"
                             style={{ width: `${percentage}%` }}
                           />
                         </div>
@@ -1891,10 +1891,10 @@ export default LedsWSForm;`;
 
               {/* CRM Integration Stats */}
               <div className={`p-6 rounded-xl border ${
-                theme === 'dark' ? 'bg-gradient-to-br from-purple-900/20 to-blue-900/20 border-purple-800' : 'bg-gradient-to-br from-purple-50 to-blue-50 border-purple-200'
+                theme === 'dark' ? 'bg-navy-900/20 border-navy-800' : 'bg-navy-50 border-navy-200'
               }`}>
                 <div className="flex items-start space-x-4">
-                  <div className="p-3 rounded-lg bg-gradient-to-br from-purple-500 to-blue-600">
+                  <div className="p-3 rounded-lg bg-navy-900">
                     <Sparkles className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">
@@ -1944,8 +1944,8 @@ export default LedsWSForm;`;
             {/* Modern Header with Gradient */}
             <div className={`relative overflow-hidden ${
               theme === 'dark' 
-                ? 'bg-gradient-to-br from-cyan-900 via-blue-900 to-indigo-900' 
-                : 'bg-gradient-to-br from-cyan-600 via-blue-600 to-indigo-600'
+                ? 'bg-navy-900' 
+                : 'bg-navy-900'
             }`}>
               <div className="absolute inset-0 bg-grid-white/10"></div>
               <div className="relative p-8">
@@ -2262,7 +2262,7 @@ export default LedsWSForm;`;
 
               {/* Generated URL Preview */}
               <div className={`p-6 rounded-xl border ${
-                theme === 'dark' ? 'bg-gradient-to-br from-cyan-900/20 to-blue-900/20 border-cyan-800' : 'bg-gradient-to-br from-cyan-50 to-blue-50 border-cyan-200'
+                theme === 'dark' ? 'bg-navy-900/20 border-navy-800' : 'bg-navy-50 border-navy-200'
               }`}>
                 <h3 className={`text-lg font-semibold mb-3 ${
                   theme === 'dark' ? 'text-white' : 'text-gray-900'
@@ -2583,8 +2583,8 @@ export default LedsWSForm;`;
             {/* Header */}
             <div className={`sticky top-0 z-10 p-6 border-b ${
               theme === 'dark' 
-                ? 'bg-gradient-to-r from-purple-900 to-blue-900 border-gray-800' 
-                : 'bg-gradient-to-r from-purple-600 to-blue-600 border-gray-200'
+                ? 'bg-navy-900 border-gray-800' 
+                : 'bg-navy-900 border-gray-200'
             }`}>
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
@@ -2920,7 +2920,7 @@ export default LedsWSForm;`;
                     });
                     setShowCampaignTracking(false);
                   }}
-                  className="flex-1 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all"
+                  className="flex-1 px-6 py-3 bg-navy-900 text-white rounded-lg font-semibold hover:bg-navy-800 transition-all"
                 >
                   Save Campaign Tracking
                 </button>
@@ -3133,8 +3133,8 @@ export default LedsWSForm;`;
             {/* Modern Header with Gradient */}
             <div className={`relative overflow-hidden ${
               theme === 'dark' 
-                ? 'bg-gradient-to-br from-green-900 via-emerald-900 to-teal-900' 
-                : 'bg-gradient-to-br from-green-600 via-emerald-600 to-teal-600'
+                ? 'bg-navy-900' 
+                : 'bg-navy-900'
             }`}>
               <div className="absolute inset-0 bg-grid-white/10"></div>
               <div className="relative p-8">
@@ -3194,7 +3194,7 @@ export default LedsWSForm;`;
                 <div className="flex items-center space-x-2 mt-3">
                   <button
                     onClick={() => window.open(generateEmbedCode(selectedForm, 'url'), '_blank')}
-                    className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-lg hover:from-cyan-700 hover:to-blue-700"
+                    className="flex items-center space-x-2 px-4 py-2 bg-navy-900 text-white rounded-lg hover:bg-navy-800"
                   >
                     <Eye className="w-4 h-4" />
                     <span>Preview Form</span>

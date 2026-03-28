@@ -83,7 +83,7 @@ const SEOAudit = () => {
         </div>
         <button
           onClick={() => setIsAuditing(true)}
-          className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-yellow-600 to-orange-600 text-white rounded-lg font-semibold hover:from-yellow-700 hover:to-orange-700"
+          className="flex items-center space-x-2 px-6 py-3 bg-navy-900 text-white rounded-lg font-semibold hover:bg-navy-800"
         >
           <RefreshCw className={`w-5 h-5 ${isAuditing ? 'animate-spin' : ''}`} />
           <span>Run Full Audit</span>

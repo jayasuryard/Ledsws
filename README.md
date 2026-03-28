@@ -1,235 +1,221 @@
-# LeadFlexUp - Modern SaaS Lead Generation Platform
+# 🚀 LeadFlexUp - AI-Powered Marketing Automation Platform
 
-![LeadFlexUp](https://img.shields.io/badge/LeadFlexUp-v1.0.0-blue)
-![React](https://img.shields.io/badge/React-19.2.0-61DAFB)
-![Tailwind](https://img.shields.io/badge/Tailwind-4.1.18-38B2AC)
+> **"Paste your URL. Your entire marketing system is live in 60 seconds."**
 
-**Enterprise-grade lead generation platform built for SMEs & SMBs**
+Modern, intelligent marketing automation platform with AI-powered business setup, lead generation, email campaigns, and comprehensive analytics.
 
 ---
 
-## 🚀 Quick Start
-
-### Prerequisites
-- Node.js 18+ and npm
-
-### Installation
+## ⚡ Quick Start
 
 ```bash
 # Install dependencies
 npm install
 
-# Start development server
+# Start development server  
 npm run dev
+
+# Build for production
+npm run build
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
-
----
-
-## ✨ Key Features
-
-### User Journey
-1. **Frictionless Registration** - Quick signup with minimal friction
-2. **Onboarding Wizard** - 4-step guided setup for first business
-3. **Global Dashboard** - Real-time KPIs and executive overview
-4. **Multi-Business Management** - Create and manage multiple businesses
-5. **AI Content Studio** - Generate blogs, social posts, e-commerce copy
-6. **CRM Pipeline** - Drag-and-drop lead management
-7. **Team Management** - Role-based access control
-8. **Dark/Light Mode** - Full theme support
-
-### Core Modules
-
-#### 📊 Global Dashboard
-- Aggregate revenue tracking
-- Active business count
-- Weekly leads generated
-- Conversion rate metrics
-- Live activity feed
-- Quick action CTAs
-
-#### 🏢 Business Workspace
-- Create multiple business profiles
-- Individual dashboards per business
-- Business-specific analytics
-- Custom branding per profile
-
-#### 🤖 AI Content Studio
-- Blog post generation
-- Social media content (Instagram, Facebook, LinkedIn)
-- E-commerce product descriptions
-- Brand voice integration
-
-#### 🎯 Lead CRM Pipeline
-- Drag-and-drop stages: New → Contacted → Qualified → Proposal → Converted
-- Automated lead scoring
-- List and pipeline views
-- Lead activity tracking
-
-#### Business-Specific Tools
-- **Unified Inbox** - All messages in one place
-- **Social Media Automation** - Schedule and automate posts
-- **Email Marketing** - Campaigns and sequences
-- **Brand Kit & AI Persona** - Colors, logos, voice
-- **Website SEO Audit** - Actionable insights
-- **Lead Forms Creator** - Google Forms-like builder
-- **Digital Business Cards** - Quick sharing
-- **Business Analytics** - Unified insights
-- **Integrations Hub** - Connect platforms
-- **Settings** - Business configuration
-
----
-
-## 🏗️ Tech Stack
-
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| React | 19.2.0 | UI Framework |
-| React Router | 7.1.3 | Navigation |
-| Zustand | 5.0.3 | State Management |
-| Tailwind CSS | 4.1.18 | Styling |
-| Lucide React | Latest | Icons |
-| Framer Motion | 11.18.0 | Animations |
-| Recharts | 2.15.0 | Charts |
-| Vite | 7.2.4 | Build Tool |
-
----
-
-## 📁 Project Structure
-
-```
-src/
-├── components/
-│   └── Layout/
-│       ├── Sidebar.jsx       # Persistent navigation
-│       ├── Header.jsx        # Top bar with search
-│       └── MainLayout.jsx    # Main wrapper
-├── pages/
-│   ├── Auth/
-│   │   └── Register.jsx      # Registration/Login
-│   ├── Onboarding/
-│   │   └── Onboarding.jsx    # 4-step wizard
-│   ├── Dashboard/
-│   │   └── GlobalDashboard.jsx
-│   ├── Business/
-│   │   ├── BusinessWorkspace.jsx
-│   │   └── BusinessDashboard.jsx
-│   ├── AIStudio/
-│   │   └── AIContentStudio.jsx
-│   └── CRM/
-│       └── CRMPipeline.jsx
-├── store/
-│   └── useStore.js           # Zustand store
-└── App.jsx                   # Main app & routes
-```
+Visit `http://localhost:5173/` to see the landing page.
 
 ---
 
 ## 🎨 Design System
 
+### Theme
+- **Primary Theme**: Light mode
+- **Main Color**: Navy (#1e3a8a, #1e40af, #1d4ed8)
+- **UI Style**: Replit-inspired clean interface
+- **Typography**: Inter font family
+- **Spacing**: 8px grid system
+
 ### Color Palette
-- **Primary Blue:** `#3B82F6` - Actions, CTAs
-- **Purple:** `#9333EA` - Gradients, accents
-- **Green:** `#10B981` - Success, revenue
-- **Orange:** `#F59E0B` - Warnings
-- **Red:** `#EF4444` - Errors
-
-### Dark Theme
-- Background: `#030712` (gray-950)
-- Cards: `#111827` (gray-900)
-- Borders: `#1F2937` (gray-800)
-
-### Light Theme
-- Background: `#F9FAFB` (gray-50)
-- Cards: `#FFFFFF` (white)
-- Borders: `#E5E7EB` (gray-200)
-
----
-
-## 🎮 Usage Guide
-
-### Creating Your First Business
-1. Complete registration
-2. Follow onboarding wizard
-3. Set business name, industry, website
-4. Select goals (lead gen, nurturing, revenue)
-5. Choose channels (email, social platforms)
-6. Launch dashboard
-
-### Generating AI Content
-1. Navigate to AI Content Studio
-2. Select business (loads brand voice)
-3. Choose content type
-4. Enter prompt
-5. Generate content
-
-### Managing Leads
-1. Open Business Dashboard
-2. Click "Lead CRM Pipeline"
-3. Add leads manually or via forms
-4. Drag between stages
-5. View automated scoring
-
----
-
-## 📦 Build Commands
-
-```bash
-# Development
-npm run dev
-
-# Production build
-npm run build
-
-# Preview production build
-npm run preview
-
-# Lint code
-npm run lint
+```css
+Navy Primary: #1e3a8a (navy-900)
+Navy Secondary: #1e40af (navy-800)  
+Navy Accent: #1d4ed8 (navy-700)
+Navy Light: #2563eb (navy-600)
+Background: #ffffff
+Text Primary: #0f172a
+Text Secondary: #64748b
+Success: #10b981
+Warning: #f59e0b
+Error: #ef4444
 ```
 
 ---
 
-## 🔐 Security Features
+## 📦 Tech Stack
 
-- Secure authentication
-- Role-based access control
-- Data isolation per business
-- Encrypted storage
-- GDPR compliance ready
+- **React 19** - UI framework
+- **Vite 7** - Build tool & dev server
+- **React Router 7** - Client-side routing
+- **Tailwind CSS 4** - Utility-first styling
+- **Zustand 5** - State management
+- **Lucide React** - Icon library
 
 ---
 
-## 🚦 Roadmap
+## 🎯 Core Features
 
-### ✅ Phase 1 (Complete)
-- User registration & authentication
-- Onboarding wizard
-- Global dashboard with KPIs
-- Business workspace
-- AI content studio
-- CRM pipeline with lead scoring
+### 1. AI-Powered Business Setup (60 Seconds)
+- Paste URL, AI extracts business details
+- Auto-detect colors, logo, style
+- Generate lead forms, email workflows, content
+- Complete marketing system ready instantly
 
-### 🚧 Phase 2 (Coming Soon)
-- Team management
-- Subscription billing
-- Advanced analytics
-- Email automation
-- Social media scheduler
+### 2. Dashboard
+- Executive KPIs (revenue, leads, conversion)
+- Quick actions & business cards
+- Real-time activity feed
 
-### 📅 Phase 3 (Planned)
-- Unified inbox
-- Integrations hub
+### 3. Analytics
+- Cross-business insights
+- Lead tracking & conversion
+- Email performance & ROI
+
+### 4. AI Content Studio
+- Text generation (blog, social, email)
+- Image designer (Canva-like editor)
+- Video editor (timeline-based)
+- Media library & batch generation
+
+### 5. Business Workspace
+- Multi-business management
+- Isolated data per business
+- Team collaboration & roles
+
+### 6. CRM & Lead Management
+- Visual pipeline with drag-and-drop
+- AI-powered lead scoring
+- Auto-assignment & activity tracking
+
+### 7. Email Marketing
+- Campaign builder with automation
+- Triggers, sequences, workflows
+- Personalization & A/B testing
+
+### 8. Lead Forms
+- Custom form builder
+- Embeddable with one-line code
+- Spam protection & validation
+
+---
+
+## 📊 Routing Structure
+
+### Public Routes
+- `/` - Landing page
+- `/login` - User login
+- `/register` - Registration
+- `/forms/:id` - Public form viewer
+
+### Protected Routes
+- `/app/dashboard` - Main dashboard
+- `/app/ai-setup` - AI business setup
+- `/app/analytics` - Analytics
+- `/app/ai-studio` - AI content generation
+- `/app/businesses` - Business workspace
+- `/app/business/:id/*` - Business tools
+- `/app/team` - Team management
+- `/app/subscription` - Billing
+- `/app/profile` - User settings
+
+---
+
+## 🎨 UI Components
+
+Located in `src/components/ui/index.js`:
+
+- `Button` - 5 variants, 4 sizes
+- `Card` - Hover/clickable variants
+- `Input` - With icons & validation
+- `Badge` - 5 color variants
+- `Avatar` - With online status
+- `Modal` - 5 size options
+- `Tooltip` - 4 placements
+- `Spinner` - Loading states
+- `Alert` - 4 notification types
+
+### Usage
+```jsx
+import { Button, Card } from './components/ui';
+
+<Button variant="primary" size="lg">
+  Click Me
+</Button>
+```
+
+---
+
+## 🔐 State Management
+
+Zustand store structure:
+```javascript
+{
+  theme: 'light',
+  user: {...},
+  isAuthenticated: boolean,
+  businesses: [...],
+  activeBusiness: {...},
+  leads: [...],
+  globalAnalytics: {...}
+}
+```
+
+---
+
+## 🚀 Development
+
+```bash
+npm run dev        # Dev server (port 5173)
+npm run build      # Production build
+npm run preview    # Preview build
+npm run lint       # Run ESLint
+```
+
+---
+
+## 📈 Performance Targets
+
+- Lighthouse Score: 90+
+- First Paint: < 1.5s
+- Time to Interactive: < 3s
+- Bundle Size: < 500KB gzipped
+
+---
+
+## 🎯 Roadmap
+
+### Phase 1: Foundation ✅
+- Navy-themed UI
+- AI business setup
+- Landing page & auth
+- Core dashboard
+
+### Phase 2: In Progress
+- Analytics redesign
+- AI Studio with creator tools
+- Business workspace modernization
+- Enhanced CRM
+
+### Phase 3: Advanced
+- Real API integrations
+- Email deliverability
+- Payment processing
 - Mobile apps
-- Advanced AI features
 
 ---
 
 ## 📄 License
 
-© 2026 LeadFlexUp. All rights reserved.
+Proprietary - © 2026 Ryo Forge Pvt. Ltd.
 
 ---
 
-**Built with ❤️ for growth-minded businesses**
+**Version**: 2.0.0  
+**Last Updated**: March 28, 2026  
+**Status**: 🚧 Active Development

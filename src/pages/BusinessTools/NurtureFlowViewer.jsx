@@ -159,7 +159,7 @@ const NurtureFlowViewer = () => {
                   return (
                     <div key={index} className="relative pl-20">
                       {/* Day Badge */}
-                      <div className="absolute left-0 w-16 h-16 rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center text-white font-bold border-4 border-gray-900">
+                      <div className="absolute left-0 w-16 h-16 rounded-xl bg-navy-900 flex items-center justify-center text-white font-bold border-4 border-gray-900">
                         <div className="text-center">
                           <div className="text-xs">Day</div>
                           <div className="text-lg">{step.day}</div>
@@ -223,7 +223,7 @@ const NurtureFlowViewer = () => {
                         {/* Performance Bar */}
                         <div className="mt-4 h-2 bg-gray-700 rounded-full overflow-hidden">
                           <div
-                            className="h-full bg-gradient-to-r from-blue-500 to-purple-500"
+                            className="h-full bg-navy-900"
                             style={{ width: `${openRate}%` }}
                           ></div>
                         </div>

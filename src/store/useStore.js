@@ -6,7 +6,7 @@ const useStore = create(
   persist(
     (set, get) => ({
       // Theme
-      theme: 'dark',
+      theme: 'light',
       toggleTheme: () => set((state) => ({ theme: state.theme === 'dark' ? 'light' : 'dark' })),
 
       // User & Auth
@@ -1249,6 +1249,11 @@ const useStore = create(
     }),
     {
       name: 'leadflexup-storage',
+      merge: (persistedState, currentState) => ({
+        ...currentState,
+        ...persistedState,
+        theme: 'light',
+      }),
     }
   )
 );

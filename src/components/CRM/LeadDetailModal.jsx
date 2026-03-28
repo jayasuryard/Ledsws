@@ -34,8 +34,8 @@ const LeadDetailModal = ({ lead, onClose, theme, leadStatuses, teamMembers, hand
         {/* Header */}
         <div className={`relative overflow-hidden ${
           theme === 'dark' 
-            ? 'bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900' 
-            : 'bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600'
+            ? 'bg-navy-900' 
+            : 'bg-navy-900'
         }`}>
           <div className="relative p-8">
             <div className="flex items-start justify-between">
@@ -87,7 +87,7 @@ const LeadDetailModal = ({ lead, onClose, theme, leadStatuses, teamMembers, hand
           {/* Lead Metadata / Context */}
           {lead.metadata && Object.keys(lead.metadata).length > 0 && (
             <div className={`p-5 rounded-xl border-2 ${
-              theme === 'dark' ? 'bg-gradient-to-br from-blue-900/20 to-cyan-900/20 border-blue-800' : 'bg-gradient-to-br from-blue-50 to-cyan-50 border-blue-200'
+              theme === 'dark' ? 'bg-navy-900/20 border-navy-800' : 'bg-navy-50 border-navy-200'
             }`}>
               <div className="flex items-start space-x-3 mb-4">
                 <Globe className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
@@ -118,7 +118,7 @@ const LeadDetailModal = ({ lead, onClose, theme, leadStatuses, teamMembers, hand
           {/* Custom Fields Section - Form Filled Details */}
           {lead.customFields && Object.keys(lead.customFields).length > 0 && (
             <div className={`p-5 rounded-xl border-2 ${
-              theme === 'dark' ? 'bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border-indigo-800' : 'bg-gradient-to-br from-indigo-50 to-purple-50 border-indigo-200'
+              theme === 'dark' ? 'bg-navy-900/20 border-navy-800' : 'bg-navy-50 border-navy-200'
             }`}>
               <div className="flex items-start space-x-3 mb-4">
                 <BarChart3 className="w-5 h-5 text-indigo-500 flex-shrink-0 mt-0.5" />
@@ -198,7 +198,7 @@ const LeadDetailModal = ({ lead, onClose, theme, leadStatuses, teamMembers, hand
           {/* Status History */}
           {lead.statusHistory && lead.statusHistory.length > 0 && (
             <div className={`p-5 rounded-xl border-2 ${
-              theme === 'dark' ? 'bg-gradient-to-br from-green-900/20 to-teal-900/20 border-green-800' : 'bg-gradient-to-br from-green-50 to-teal-50 border-green-200'
+              theme === 'dark' ? 'bg-navy-900/20 border-navy-800' : 'bg-navy-50 border-navy-200'
             }`}>
               <div className="flex items-start space-x-3 mb-4">
                 <Clock className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
@@ -295,7 +295,7 @@ const LeadDetailModal = ({ lead, onClose, theme, leadStatuses, teamMembers, hand
 
           {/* Lead Response Summary Table */}
           <div className={`p-5 rounded-xl border-2 ${
-            theme === 'dark' ? 'bg-gradient-to-br from-cyan-900/20 to-blue-900/20 border-cyan-800' : 'bg-gradient-to-br from-cyan-50 to-blue-50 border-cyan-200'
+            theme === 'dark' ? 'bg-navy-900/20 border-navy-800' : 'bg-navy-50 border-navy-200'
           }`}>
             <div className="flex items-start space-x-3 mb-4">
               <BarChart3 className="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" />

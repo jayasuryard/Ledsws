@@ -43,7 +43,7 @@ const BusinessDashboard = () => {
       description: 'All messages in one place',
       icon: Inbox,
       color: 'blue',
-      path: `/business/${businessId}/inbox`,
+      path: `/app/business/${businessId}/inbox`,
       stats: '12 new',
       tooltip: 'Centralize all customer communications from email, social media, and messaging platforms in one unified inbox'
     },
@@ -52,7 +52,7 @@ const BusinessDashboard = () => {
       description: 'Schedule & automate posts',
       icon: Share2,
       color: 'purple',
-      path: `/business/${businessId}/social`,
+      path: `/app/business/${businessId}/social`,
       stats: '5 scheduled',
       tooltip: 'Schedule posts across multiple social platforms and automate your social media marketing campaigns'
     },
@@ -61,7 +61,7 @@ const BusinessDashboard = () => {
       description: 'Campaigns & sequences',
       icon: Mail,
       color: 'green',
-      path: `/business/${businessId}/email`,
+      path: `/app/business/${businessId}/email`,
       stats: '3 active',
       tooltip: 'Create email campaigns, automated drip sequences, and track engagement metrics'
     },
@@ -70,7 +70,7 @@ const BusinessDashboard = () => {
       description: 'Manage your leads',
       icon: Users,
       color: 'orange',
-      path: `/business/${businessId}/crm`,
+      path: `/app/business/${businessId}/crm`,
       stats: '45 leads',
       tooltip: 'Visualize your sales pipeline, track leads through stages, and manage customer relationships'
     },
@@ -79,7 +79,7 @@ const BusinessDashboard = () => {
       description: 'Pre-built growth playbooks',
       icon: Workflow,
       color: 'pink',
-      path: `/business/${businessId}/workflows`,
+      path: `/app/business/${businessId}/workflows`,
       stats: '6 available',
       tooltip: 'Choose a goal, we set up the system, you execute. Get leads, follow up, and see what works—fast.'
     },
@@ -88,7 +88,7 @@ const BusinessDashboard = () => {
       description: 'AI → Design → Publish',
       icon: Sparkles,
       color: 'purple',
-      path: `/business/${businessId}/creator`,
+      path: `/app/business/${businessId}/creator`,
       stats: 'New!',
       tooltip: 'End-to-end creator workflow: Generate with AI, edit in designer, publish to social media',
       badge: 'NEW'
@@ -98,7 +98,7 @@ const BusinessDashboard = () => {
       description: 'Canva-like design tool',
       icon: Image,
       color: 'blue',
-      path: `/business/${businessId}/design`,
+      path: `/app/business/${businessId}/design`,
       stats: 'Create',
       tooltip: 'Browser-based design editor with drag-and-drop, templates, and platform presets',
       badge: 'NEW'
@@ -108,7 +108,7 @@ const BusinessDashboard = () => {
       description: 'Timeline-based editing',
       icon: Video,
       color: 'purple',
-      path: `/business/${businessId}/video`,
+      path: `/app/business/${businessId}/video`,
       stats: 'Edit',
       tooltip: 'Create videos with timeline editing, transitions, text overlays, and audio tracks',
       badge: 'NEW'
@@ -118,7 +118,7 @@ const BusinessDashboard = () => {
       description: 'All your creative assets',
       icon: FolderOpen,
       color: 'cyan',
-      path: `/business/${businessId}/media`,
+      path: `/app/business/${businessId}/media`,
       stats: 'Browse',
       tooltip: 'Centralized media library for images, videos, and AI-generated content',
       badge: 'NEW'
@@ -128,7 +128,7 @@ const BusinessDashboard = () => {
       description: 'Optimize your site',
       icon: Search,
       color: 'yellow',
-      path: `/business/${businessId}/seo`,
+      path: `/app/business/${businessId}/seo`,
       stats: 'Run audit',
       tooltip: 'Analyze your website for SEO issues, get optimization recommendations, and improve search rankings'
     },
@@ -137,7 +137,7 @@ const BusinessDashboard = () => {
       description: 'Create & embed forms',
       icon: FileText,
       color: 'cyan',
-      path: `/business/${businessId}/forms`,
+      path: `/app/business/${businessId}/forms`,
       stats: '2 forms',
       tooltip: 'Build custom lead capture forms with conditional logic and embed them anywhere on your website'
     },
@@ -146,7 +146,7 @@ const BusinessDashboard = () => {
       description: 'Share instantly',
       icon: CreditCard,
       color: 'indigo',
-      path: `/business/${businessId}/cards`,
+      path: `/app/business/${businessId}/cards`,
       stats: '1 card',
       tooltip: 'Create digital business cards with contact info, social links, and instant sharing via QR code or link'
     },
@@ -155,7 +155,7 @@ const BusinessDashboard = () => {
       description: 'Unified insights',
       icon: BarChart3,
       color: 'green',
-      path: `/business/${businessId}/analytics`,
+      path: `/app/business/${businessId}/analytics`,
       stats: 'View',
       tooltip: 'Comprehensive analytics dashboard showing lead sources, conversion rates, revenue trends, and ROI'
     },
@@ -164,7 +164,7 @@ const BusinessDashboard = () => {
       description: 'Connect platforms',
       icon: Plug,
       color: 'blue',
-      path: `/business/${businessId}/integrations`,
+      path: `/app/business/${businessId}/integrations`,
       stats: '0 connected',
       tooltip: 'Connect with popular platforms like Zapier, Slack, Google Analytics, and hundreds of other tools'
     },
@@ -173,7 +173,7 @@ const BusinessDashboard = () => {
       description: 'Auto-score leads',
       icon: Zap,
       color: 'yellow',
-      path: `/business/${businessId}/scorer`,
+      path: `/app/business/${businessId}/scorer`,
       stats: 'Active',
       tooltip: 'Automatically score and prioritize leads based on behavior, demographics, and engagement patterns'
     },
@@ -182,7 +182,7 @@ const BusinessDashboard = () => {
       description: 'Business configuration',
       icon: Settings,
       color: 'gray',
-      path: `/business/${businessId}/settings`,
+      path: `/app/business/${businessId}/settings`,
       stats: 'Configure',
       tooltip: 'Configure business settings, team members, permissions, billing, and notification preferences'
     }
@@ -214,7 +214,7 @@ const BusinessDashboard = () => {
     <div className="space-y-6">
       {/* Breadcrumb */}
       <Link
-        to="/businesses"
+        to="/app/businesses"
         className={`inline-flex items-center space-x-2 text-sm ${
           theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'
         } transition-colors`}
@@ -226,7 +226,7 @@ const BusinessDashboard = () => {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
-          <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+          <div className="w-16 h-16 bg-navy-900 rounded-xl flex items-center justify-center">
             <span className="text-2xl font-bold text-white">
               {business.name.charAt(0).toUpperCase()}
             </span>
@@ -291,7 +291,7 @@ const BusinessDashboard = () => {
                     <tool.icon className="w-6 h-6" />
                   </div>
                   {tool.badge && (
-                    <span className="absolute -top-1 -right-1 px-2 py-0.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-bold rounded-full">
+                    <span className="absolute -top-1 -right-1 px-2 py-0.5 bg-navy-900 text-white text-xs font-bold rounded-full">
                       {tool.badge}
                     </span>
                   )}

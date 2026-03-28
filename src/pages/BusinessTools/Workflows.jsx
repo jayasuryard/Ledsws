@@ -249,10 +249,10 @@ const Workflows = () => {
 
   const getColorClass = (color) => {
     const colors = {
-      leads: 'from-blue-500 to-cyan-500',
-      followup: 'from-purple-500 to-pink-500',
-      analyze: 'from-green-500 to-emerald-500',
-      default: 'from-blue-500 to-purple-500'
+      leads: 'from-navy-900 to-navy-800',
+      followup: 'from-navy-900 to-navy-800',
+      analyze: 'from-navy-900 to-navy-800',
+      default: 'from-navy-900 to-navy-800'
     };
     return colors[color] || colors.default;
   };
@@ -403,7 +403,7 @@ const Workflows = () => {
 
             {/* What You Get */}
             <div className={`p-5 rounded-xl border-2 ${
-              theme === 'dark' ? 'bg-gradient-to-br from-blue-900/20 to-cyan-900/20 border-blue-800' : 'bg-gradient-to-br from-blue-50 to-cyan-50 border-blue-200'
+              theme === 'dark' ? 'bg-navy-900/20 border-navy-800' : 'bg-navy-50 border-navy-200'
             }`}>
               <h3 className={`text-lg font-semibold mb-3 flex items-center gap-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                 <Sparkles className="w-5 h-5 text-blue-500" />
@@ -423,7 +423,7 @@ const Workflows = () => {
 
             {/* How It Works */}
             <div className={`p-5 rounded-xl border-2 ${
-              theme === 'dark' ? 'bg-gradient-to-br from-purple-900/20 to-pink-900/20 border-purple-800' : 'bg-gradient-to-br from-purple-50 to-pink-50 border-purple-200'
+              theme === 'dark' ? 'bg-navy-900/20 border-navy-800' : 'bg-navy-50 border-navy-200'
             }`}>
               <h3 className={`text-lg font-semibold mb-3 flex items-center gap-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                 <Play className="w-5 h-5 text-purple-500" />
@@ -447,7 +447,7 @@ const Workflows = () => {
 
             {/* Expected Outcome */}
             <div className={`p-5 rounded-xl border-2 ${
-              theme === 'dark' ? 'bg-gradient-to-br from-green-900/20 to-emerald-900/20 border-green-800' : 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-200'
+              theme === 'dark' ? 'bg-navy-900/20 border-navy-800' : 'bg-navy-50 border-navy-200'
             }`}>
               <h3 className={`text-lg font-semibold mb-2 flex items-center gap-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                 <Target className="w-5 h-5 text-green-500" />
@@ -468,8 +468,8 @@ const Workflows = () => {
               }}
               className={`w-full py-4 rounded-xl font-bold text-lg transition-all ${
               theme === 'dark'
-                ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:shadow-lg hover:shadow-blue-500/50'
-                : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-lg hover:shadow-blue-500/50'
+                ? 'bg-navy-900 text-white hover:bg-navy-800'
+                : 'bg-navy-900 text-white hover:bg-navy-800'
             }`}>
               <span className="flex items-center justify-center gap-2">
                 <Play className="w-5 h-5" />
@@ -512,8 +512,8 @@ const Workflows = () => {
       {/* Info Banner */}
       <div className={`p-6 rounded-2xl border-2 ${
         theme === 'dark'
-          ? 'bg-gradient-to-br from-blue-900/20 to-purple-900/20 border-blue-800'
-          : 'bg-gradient-to-br from-blue-50 to-purple-50 border-blue-200'
+          ? 'bg-navy-900/20 border-navy-800'
+          : 'bg-navy-50 border-navy-200'
       }`}>
         <div className="flex items-start gap-4">
           <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${
